@@ -1,1 +1,17 @@
-Completion is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Completion: Remastered: Remastered: Remastered: Remastered: Remastered: Remastered: Remastered: Remastered: Remastered
+Another mod for infinite items and crafting recipes; Open Beta!
+HahahahahahaahahahahahahahahahahAHAHAHAHAHAHAHAHAHH 20th time this mod is being remade! Fingers crossed that it won't be cancelled again. :)
+
+===========================================
+[c/1C1C1C:Github]
+https://github.com/Steviegt6/
+===========================================
+[c/1C1C1C:Website]
+https://steviegt6.github.io/
+===========================================
+[c/1C1C1C:Credits]
+Steviegt6: Main coder, developer, and spriter.
+===========================================
+
+[c/151515:v1.0.0]
+- Initial mod release.
