@@ -72,7 +72,7 @@ namespace CompletionMod
 				ItemID.PlatinumBar
 			});
 			RecipeGroup.RegisterGroup("CompletionMod:GoldPlatinumBar", group4);
-			////////////////////////////////////////////////////////////////////////////////////////////////////
+
 			RecipeGroup group5 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Cobalt or Palladium Bar", new int[]
 			{
 				ModContent.ItemType<Placeholders.CobaltPalladiumBar>(),
