@@ -38,6 +38,41 @@ namespace CompletionMod
 			text.SetDefault("[i:" + item + "][c/" + color + ": " + name + "]");
 			AddTranslation(text);
 		}
+		public override void AddRecipes()
+		{
+			base.AddRecipes();
+			addCandyCaneRecipes();
+		}
+		public void addCandyCaneRecipes()
+		{
+			addCnadyCanePickaxe();
+			addCandyCaneSword();
+			addCandyCaneHook();
+		}
+		public void addCnadyCanePickaxe()
+		{
+			ModRecipe recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 35);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CnadyCanePickaxe);
+			recipe.AddRecipe();
+		}
+		public void addCandyCaneSword()
+		{
+			ModRecipe recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 50);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CandyCaneSword);
+			recipe.AddRecipe();
+		}
+		public void addCandyCaneHook()
+		{
+			ModRecipe recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 85);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CandyCaneHook);
+			recipe.AddRecipe();
+		}
 		public override void AddRecipeGroups()
 		{
 			base.AddRecipeGroups();
