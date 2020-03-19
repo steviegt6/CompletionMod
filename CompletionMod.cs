@@ -2,12 +2,42 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
-
+using System;
 
 namespace CompletionMod
 {
 	public class CompletionMod : Mod
 	{
+		internal static CompletionMod Instance;
+
+		public override void Load()
+		{
+			Instance = this;
+
+			AddToggle("Misc", "Miscellaneous", 575, "42CEE4");
+			AddToggle("MaxStack", "Max Stack Increase", 3095, "89909B");
+		}
+		public override void Unload()
+		{
+		}
+
+		// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
+		//For modded items
+
+		public void AddToggle(String toggle, String name, String item, String color)
+		{
+			ModTranslation text = CreateTranslation(toggle);
+			text.SetDefault("[i:" + Instance.ItemType(item) + "][c/" + color + ": " + name + "]");
+			AddTranslation(text);
+		}
+
+		//For Vanilla items
+		public void AddToggle(String toggle, String name, int item, String color)
+		{
+			ModTranslation text = CreateTranslation(toggle);
+			text.SetDefault("[i:" + item + "][c/" + color + ": " + name + "]");
+			AddTranslation(text);
+		}
 		public override void AddRecipeGroups()
 		{
 			base.AddRecipeGroups();
