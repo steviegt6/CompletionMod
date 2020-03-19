@@ -23,7 +23,7 @@ namespace CompletionMod
 		[Label("$Mods.CompletionMod.MaxStack")]
 		[Tooltip("THIS IS A VERY SIMPLE MAX STACK FEATURE, I WOULD RECOMMEND SWITCHING TO A MOD SUCH AS 'Max Stack Plus Extra' AND DISABLING THIS ONE!")]
 		[ReloadRequired]
-		[DefaultValue(true)]
+		[DefaultValue(false)]
 		public bool MaxStackEnabled;
 	}
 }
