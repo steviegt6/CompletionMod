@@ -19,6 +19,7 @@ namespace CompletionMod
 		}
 		public override void Unload()
 		{
+			Instance = null;
 		}
 
 		// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
