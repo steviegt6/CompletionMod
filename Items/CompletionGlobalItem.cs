@@ -39,23 +39,24 @@ namespace CompletionMod.Items
                 base.SetDefaults(item);
             }
         }
-        /*public override void OpenVanillaBag(string context, Player player, int arg)
+        public override void OpenVanillaBag(string context, Player player, int arg)
         {
-            base.OpenVanillaBag(context, player, arg);
-            switch (arg)
+            //base.OpenVanillaBag(context, player, arg);
+            if (context == "present")
             {
-                case ItemID.Present:
-                    if (Main.rand.Next(156) == 0)
-                    {
-                        player.QuickSpawnItem(mod.ItemType("GreenCandyCaneHook"));
-                    }
-                    else if (Main.rand.Next(159) == 0)
-                    {
-                        int[] items = { mod.ItemType("GreenCnadyCanePickaxe"), mod.ItemType("GreenCandyCaneSword") };
-                        player.QuickSpawnItem(Main.rand.Next(items));
-                    }
-                    break;
+                if (Main.rand.Next(156) == 0)
+                {
+                    player.QuickSpawnItem(mod.ItemType("GreenCandyCaneHookItem"));
+                }
+                else if (Main.rand.Next(159) == 0)
+                {
+                    player.QuickSpawnItem(mod.ItemType("GreenCnadyCanePickaxe"));
+                }
+                else if (Main.rand.Next(159) == 0)
+                {
+                    player.QuickSpawnItem(mod.ItemType("GreenCandyCaneSword"));
+                }
             }
-        }*/
+        }
     }
 }
