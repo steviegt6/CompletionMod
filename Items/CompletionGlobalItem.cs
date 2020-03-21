@@ -8,6 +8,14 @@ namespace CompletionMod.Items
 {
     public class CompletionGlobalItem : GlobalItem
     {
+        public override void UpdateAccessory(Item item, Player player, bool hideVisual)
+        {
+            base.UpdateAccessory(item, player, hideVisual);
+            if (item.type == ItemID.Blindfold || item.type == ItemID.AnkhCharm || item.type == ItemID.AnkhShield)
+            {
+                player.buffImmune[BuffID.Blackout] = true;
+            }
+        }
         public override bool CloneNewInstances => /*base.CloneNewInstances;*/ true;
         public override void SetDefaults(Item item)
         {
