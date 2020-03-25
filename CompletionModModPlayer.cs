@@ -6,13 +6,16 @@ namespace CompletionMod
 {
 	public class CompletionModModPlayer : ModPlayer
 	{
+		public bool WaterBottle;
 		public override void UpdateDead()
 		{
 			base.UpdateDead();
+			WaterBottle = false;
 		}
 		public override void ResetEffects()
 		{
 			base.ResetEffects();
+			WaterBottle = false;
 		}
 		public override void PreUpdate()
 		{

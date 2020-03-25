@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using CompletionMod;
 using static Terraria.ModLoader.ModContent;
+using System.Collections.Generic;
 
 namespace CompletionMod.Items
 {
@@ -14,6 +15,28 @@ namespace CompletionMod.Items
             if (item.type == ItemID.Blindfold || item.type == ItemID.AnkhCharm || item.type == ItemID.AnkhShield)
             {
                 player.buffImmune[BuffID.Blackout] = true;
+            }
+            if (item.type == ItemID.ArmorPolish || item.type == ItemID.ArmorBracing || item.type == ItemID.AnkhCharm || item.type == ItemID.AnkhShield)
+            {
+                player.buffImmune[BuffID.WitheredArmor] = true;
+            }
+            if (item.type == ItemID.Nazar || item.type == ItemID.CountercurseMantra || item.type == ItemID.AnkhCharm || item.type == ItemID.AnkhShield)
+            {
+                player.buffImmune[BuffID.WitheredWeapon] = true;
+            }
+        }
+        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        {
+            base.ModifyTooltips(item, tooltips);
+            if (item.type == ItemID.Blindfold)
+            {
+                TooltipLine addTooltip = new TooltipLine(mod, "immunity", "Immunity to Blackout");
+                tooltips.Add(addTooltip);
+            }
+            if (item.type == ItemID.ArmorPolish || item.type == ItemID.ArmorBracing)
+            {
+                TooltipLine addTooltip = new TooltipLine(mod, "immunity", "Immunity to Withered Armor");
+                tooltips.Add(addTooltip);
             }
         }
         public override bool CloneNewInstances => /*base.CloneNewInstances;*/ true;
