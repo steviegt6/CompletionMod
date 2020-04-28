@@ -42,7 +42,7 @@ namespace CompletionMod.Items.Buckets
             }
             return false;
         }
-        internal static bool UseBucket(Player player, LiquidTypes liquid, int range)
+        internal static bool UseBucket(Player player, LiquidTypes liquid, int range) //range code credit goes to mariothedog
         {
             if (player.whoAmI == Main.myPlayer && !player.noBuilding)
             {
