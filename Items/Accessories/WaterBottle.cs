@@ -29,7 +29,10 @@ namespace CompletionMod.Items.Accessories
             player.buffImmune[BuffID.OnFire] = true;
             player.buffImmune[BuffID.OgreSpit] = true;
             player.buffImmune[BuffID.Ichor] = true;
-            //player.wet = true;
+            //bool submerged = Collision.DrownCollision(player.position, player.width, player.height, player.gravDir);
+            /*player.wet = true;
+            if (!submerged)
+                player.ignoreWater = true;*/
             player.AddBuff(BuffID.Wet, 0, true);
         }
     }
