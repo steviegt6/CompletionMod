@@ -6,20 +6,33 @@ namespace CompletionMod
 {
 	public class CompletionModModPlayer : ModPlayer
 	{
-		public bool WaterBottle;
+		public bool waterBottle;
+		public bool handWarmer;
 		public override void UpdateDead()
 		{
 			base.UpdateDead();
-			WaterBottle = false;
+			waterBottle = false;
+			handWarmer = false;
 		}
 		public override void ResetEffects()
 		{
 			base.ResetEffects();
-			WaterBottle = false;
+			waterBottle = false;
+			handWarmer = false;
+		}
+		public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
+		{
+			base.UpdateEquips(ref wallSpeedBuff, ref tileSpeedBuff, ref tileRangeBuff);
 		}
 		public override void PreUpdate()
 		{
 			base.PreUpdate();
+			if (player.buffImmune[46] && player.buffImmune[47])
+				handWarmer = true;
+			if (handWarmer)
+			{
+				player.AddBuff(BuffID.Warmth, 0, true);
+			}
 			if (player.wet || player.honeyWet)
 			{
 				for (int OgreSpit = 0; OgreSpit < Player.MaxBuffs; OgreSpit++)

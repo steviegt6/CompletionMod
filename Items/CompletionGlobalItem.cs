@@ -38,6 +38,12 @@ namespace CompletionMod.Items
                 TooltipLine addTooltip = new TooltipLine(mod, "immunity", "Immunity to Withered Armor");
                 tooltips.Add(addTooltip);
             }
+            if (item.type == ItemID.HandWarmer)
+            {
+                TooltipLine addTooltip = new TooltipLine(mod, "buffimmunity", "Immunity to Forstburn" +
+                    "\nGives the player Warmth");
+                tooltips.Add(addTooltip);
+            }
         }
         public override bool CloneNewInstances => /*base.CloneNewInstances;*/ true;
         public override void SetDefaults(Item item)

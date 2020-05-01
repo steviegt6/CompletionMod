@@ -17,9 +17,9 @@ namespace CompletionMod.Items.Accessories
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.width = 22;
-            item.height = 30;
-            item.value = ((10 * 100) * 5) * 5;
+            item.width = 16;
+            item.height = 24;
+            item.value = 4 * 5;
             item.rare = 0;
             item.accessory = true;
         }

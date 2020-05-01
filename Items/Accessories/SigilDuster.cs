@@ -4,35 +4,34 @@ using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Accessories
 {
-    [AutoloadEquip(EquipType.Waist)]
-    public class AntiVenom : ModItem
+    public class SigilDuster : ModItem
     {
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            DisplayName.SetDefault("Anti-Venom");
-            Tooltip.SetDefault("Immunity to Venom");
+            DisplayName.SetDefault("Sigil Duster");
+            Tooltip.SetDefault("Provides immunity to Webbed and Distorted");
         }
         public override void SetDefaults()
         {
             base.SetDefaults();
-            item.width = 22;
-            item.height = 30;
-            item.value = (2 * 100) * 10;
-            item.rare = 4;
+            item.width = 44;
+            item.height = 34;
+            item.rare = 0;
             item.accessory = true;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             base.UpdateAccessory(player, hideVisual);
-            player.buffImmune[BuffID.Venom] = true;
+            player.buffImmune[BuffID.Webbed] = true;
         }
         public override void AddRecipes()
         {
             base.AddRecipes();
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.VialofVenom, 10);
-            recipe.AddTile(TileID.ImbuingStation);
+            recipe.AddIngredient(mod.ItemType("FeatherDuster"), 1);
+            recipe.AddIngredient(mod.ItemType("TornRobe"), 1);
+            recipe.AddTile(TileID.LunarCraftingStation);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }
