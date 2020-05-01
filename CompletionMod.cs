@@ -3,6 +3,8 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using System;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace CompletionMod
 {
@@ -22,10 +24,10 @@ namespace CompletionMod
 			Instance = null;
 		}
 
-		// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
-		//For modded items
+	// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
 
-		public void AddToggle(String toggle, String name, String item, String color)
+	//For modded items
+	public void AddToggle(String toggle, String name, String item, String color)
 		{
 			ModTranslation text = CreateTranslation(toggle);
 			text.SetDefault("[i:" + Instance.ItemType(item) + "][c/" + color + ": " + name + "]");

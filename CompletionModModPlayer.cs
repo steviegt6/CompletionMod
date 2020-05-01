@@ -20,16 +20,27 @@ namespace CompletionMod
 		public override void PreUpdate()
 		{
 			base.PreUpdate();
-			if (player.wet)
+			if (player.wet || player.honeyWet)
 			{
-				for (int OgreSpitBuff = 0; OgreSpitBuff < Player.MaxBuffs; OgreSpitBuff++)
+				for (int OgreSpit = 0; OgreSpit < Player.MaxBuffs; OgreSpit++)
 				{
-					if (player.buffType[OgreSpitBuff] == BuffID.OgreSpit)
+					if (player.buffType[OgreSpit] == BuffID.OgreSpit)
 					{
-						player.DelBuff(OgreSpitBuff);
+						player.DelBuff(OgreSpit);
 					}
 				}
 				player.buffImmune[BuffID.OgreSpit] = true;
+			}
+			if (player.honeyWet)
+			{
+				for (int CursedInferno = 0; CursedInferno < Player.MaxBuffs; CursedInferno++)
+				{
+					if (player.buffType[CursedInferno] == BuffID.CursedInferno)
+					{
+						player.DelBuff(CursedInferno);
+					}
+				}
+				player.buffImmune[BuffID.CursedInferno] = true;
 			}
 		}
 		public CompletionModModPlayer()

@@ -27,5 +27,14 @@ namespace CompletionMod.Items.Accessories
             base.UpdateAccessory(player, hideVisual);
             player.buffImmune[BuffID.Venom] = true;
         }
+        public override void AddRecipes()
+        {
+            base.AddRecipes();
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.VialofVenom, 10);
+            recipe.AddTile(TileID.ImbuingStation);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
     }
 }
