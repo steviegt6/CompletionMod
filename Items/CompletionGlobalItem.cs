@@ -75,6 +75,34 @@ namespace CompletionMod.Items
             {
                 base.SetDefaults(item);
             }
+            switch (item.type)
+            {
+                case ItemID.SlimeCrown:
+                    item.value = 50 * 100;
+                    break;
+                case ItemID.SuspiciousLookingEye:
+                    item.value = 1 * 100 * 100;
+                    break;
+                case ItemID.WormFood:
+                case ItemID.BloodySpine:
+                    item.value = 5 * 100 * 100;
+                    break;
+                case ItemID.Abeemination:
+                    item.value = 7 * 100 * 100 + (50 * 100);
+                    break;
+                case ItemID.ClothierVoodooDoll:
+                    item.value = 15 * 100 * 100;
+                    break;
+                case ItemID.GuideVoodooDoll:
+                    item.value = 20 * 100 * 100;
+                    break;
+                case ItemID.PirateMap:
+                    item.value = 20 * 100 * 100;
+                    break;
+                case ItemID.GoblinBattleStandard:
+                    item.value = 10 * 100;
+                    break;
+            }
         }
         public override void OpenVanillaBag(string context, Player player, int arg)
         {

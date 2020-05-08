@@ -199,9 +199,16 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.CelestialSigil);
                     nextSlot++;
                 }
+                if (NPC.downedGoblins)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.GoblinBattleStandard);
+                    nextSlot++;
+                }
                 if (NPC.downedPirates)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.PirateMap);
                     nextSlot++;
                 }
                 if (CompletionModWorld.downedOgre)
