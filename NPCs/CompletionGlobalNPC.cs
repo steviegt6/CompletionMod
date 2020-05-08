@@ -12,14 +12,16 @@ namespace CompletionMod.NPCs
         public override void NPCLoot(NPC npc)
         {
             base.NPCLoot(npc);
-            if (npc.type == NPCID.CultistBoss)
+            switch (npc.type)
             {
-                switch (Main.rand.Next(20))
-                {
-                    case 0:
-                        Item.NewItem(npc.Hitbox, mod.ItemType("TornRobe"));
-                        break;
-                }
+                case NPCID.DD2OgreT2:
+                case NPCID.DD2OgreT3:
+                    CompletionModWorld.downedOgre = true;
+                    break;
+                case NPCID.DD2DarkMageT1:
+                case NPCID.DD2DarkMageT3:
+                    CompletionModWorld.downedDarkMage = true;
+                    break;
             }
         }
     }

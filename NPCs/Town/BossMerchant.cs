@@ -51,34 +51,20 @@ namespace CompletionMod.NPCs.Town
         }
         public override string TownNPCName()
         {
-            switch (Main.rand.Next(5))
-            {
-                case 0:
-                    return "Placeholder Name 0";
-                case 1:
-                    return "Placeholder Name 1";
-                case 2:
-                    return "Placeholder Name 2";
-                case 3:
-                    return "Placeholder Name 3";
-                case 4:
-                    return "Placeholder Name 4";
-                default:
-                    return "Default Placeholder Name";
-            }
+            return "Boss Merchant";
         }
         public override string GetChat()
         {
-            switch (Main.rand.Next(3))
+            switch (Main.rand.Next(2))
             {
                 case 0:
-                    return "Placeholder Text 1";
+                    return "...";
                 case 1:
-                    return "Placeholder Text 2";
+                    return "Yeah, my name is my profession. So what?";
                 case 2:
-                    return "Placeholder Text 3";
+                    return "I need a sprite, I know.";
                 default:
-                    return "Default Placeholder Text";
+                    return "...";
             }
         }
         public override void SetChatButtons(ref string button, ref string button2)
@@ -87,13 +73,13 @@ namespace CompletionMod.NPCs.Town
             switch (shopType)
             {
                 case 1:
-                    button = "Test 1";
+                    button = "Vanilla Boss Summons";
                     break;
                 case 2:
-                    button = "Test 2";
+                    button = "Vanilla Pre-Hardmode Boss Loot 1";
                     break;
                 case 3:
-                    button = "Test 3";
+                    button = "Vanilla Pre-Hardmode Boss Loot 2";
                     break;
             }
             if (shopType > 3)
@@ -142,8 +128,97 @@ namespace CompletionMod.NPCs.Town
         {
             if (shop1)
             {
-                shop.item[nextSlot].SetDefaults(ItemID.SuspiciousLookingEye);
-                nextSlot++;
+                if (NPC.downedSlimeKing)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SlimeCrown);
+                    nextSlot++;
+                }
+                if (NPC.downedBoss1)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SuspiciousLookingEye);
+                    nextSlot++;
+                }
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.WormFood);
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.BloodySpine);
+                    nextSlot++;
+                }
+                if (NPC.downedQueenBee)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.Abeemination);
+                    nextSlot++;
+                }
+                if (NPC.downedBoss3)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.ClothierVoodooDoll);
+                    nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.GuideVoodooDoll);
+                    nextSlot++;
+                }
+                if (NPC.downedMechBoss1)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.MechanicalWorm);
+                    nextSlot++;
+                }
+                if (NPC.downedMechBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.MechanicalEye);
+                    nextSlot++;
+                }
+                if (NPC.downedMechBoss3)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.MechanicalSkull);
+                    nextSlot++;
+                }
+                /*if (NPC.downedPlantBoss)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("PlanterasBulb"));
+                    nextSlot++;
+                }*/
+                if (NPC.downedGolemBoss)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.LihzahrdPowerCell);
+                    nextSlot++;
+                }
+                if (NPC.downedFishron)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.TruffleWorm);
+                    nextSlot++;
+                }
+                if (NPC.downedAncientCultist)
+                {
+                    //TBD
+                }
+                if (NPC.downedMoonlord)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.CelestialSigil);
+                    nextSlot++;
+                }
+                if (NPC.downedPirates)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedOgre)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("OgresHead"));
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedDarkMage)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("DarkTome"));
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedBetsy)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("DragonFoot"));
+                    nextSlot++;
+                }
             }
             else if (shop2)
             {

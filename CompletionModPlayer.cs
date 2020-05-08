@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace CompletionMod
 {
-	public class CompletionModModPlayer : ModPlayer
+	public class CompletionModPlayer : ModPlayer
 	{
 		public bool waterBottle;
 		public bool handWarmer;
@@ -55,9 +55,6 @@ namespace CompletionMod
 				}
 				player.buffImmune[BuffID.CursedInferno] = true;
 			}
-		}
-		public CompletionModModPlayer()
-		{
 		}
 	}
 }
