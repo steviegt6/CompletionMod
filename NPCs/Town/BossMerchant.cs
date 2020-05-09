@@ -190,25 +190,14 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.TruffleWorm);
                     nextSlot++;
                 }
-                if (NPC.downedAncientCultist)
+                /*if (NPC.downedAncientCultist)
                 {
-                    //TBD
-                }
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("AncientMask"));
+                    nextSlot++;
+                }*/
                 if (NPC.downedMoonlord)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.CelestialSigil);
-                    nextSlot++;
-                }
-                if (NPC.downedGoblins)
-                {
-                    shop.item[nextSlot].SetDefaults(ItemID.GoblinBattleStandard);
-                    nextSlot++;
-                }
-                if (NPC.downedPirates)
-                {
-                    shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.PirateMap);
                     nextSlot++;
                 }
                 if (CompletionModWorld.downedOgre)
@@ -224,6 +213,18 @@ namespace CompletionMod.NPCs.Town
                 if (CompletionModWorld.downedBetsy)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("DragonFoot"));
+                    nextSlot++;
+                }
+                if (NPC.downedGoblins)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.GoblinBattleStandard);
+                    nextSlot++;
+                }
+                if (NPC.downedPirates)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.PirateMap);
                     nextSlot++;
                 }
             }
