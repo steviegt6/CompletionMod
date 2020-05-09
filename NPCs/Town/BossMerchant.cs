@@ -73,7 +73,7 @@ namespace CompletionMod.NPCs.Town
             switch (shopType)
             {
                 case 1:
-                    button = "Vanilla Boss Summons";
+                    button = "Vanilla Summoning Items";
                     break;
                 case 2:
                     button = "Vanilla Pre-Hardmode Boss Loot 1";
