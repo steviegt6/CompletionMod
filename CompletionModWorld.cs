@@ -15,6 +15,10 @@ namespace CompletionMod
         public static bool eclipse = false;
         public static bool downedLegion;
         public static bool legion = false;
+        public static bool downedPumpkinMoon;
+        public static bool pumpkin = false;
+        public static bool downedFrostMoon;
+        public static bool frost = false;
 
         public override void Initialize()
         {
@@ -24,6 +28,8 @@ namespace CompletionMod
             downedBetsy = false;
             downedEclipse = false;
             downedLegion = false;
+            downedPumpkinMoon = false;
+            downedFrostMoon = false;
         }
 
         public override void Load(TagCompound tag)
@@ -34,6 +40,8 @@ namespace CompletionMod
             downedBetsy = downed.Contains("Betsy");
             downedEclipse = downed.Contains("Eclipse");
             downedLegion = downed.Contains("Legion");
+            downedPumpkinMoon = downed.Contains("PumpkinMoon");
+            downedFrostMoon = downed.Contains("ForstMoon");
         }
 
         public override TagCompound Save()
@@ -48,7 +56,11 @@ namespace CompletionMod
             if (downedEclipse)
                 downed.Add("Eclipse");
             if (downedLegion)
-                downed.Add("Legion:");
+                downed.Add("Legion");
+            if (downedPumpkinMoon)
+                downed.Add("PumpkinMoon");
+            if (downedFrostMoon)
+                downed.Add("FrostMoon");
             return new TagCompound
             {
                 ["downed"] = downed
@@ -66,6 +78,8 @@ namespace CompletionMod
                 downedBetsy = flags[2];
                 downedEclipse = flags[3];
                 downedLegion = flags[4];
+                downedPumpkinMoon = flags[5];
+                downedFrostMoon = flags[6];
             }
             else
                 mod.Logger.WarnFormat("CompletionMod: Unknown loadVersion: {0}", loadVersion);
@@ -79,6 +93,8 @@ namespace CompletionMod
             flags[2] = downedBetsy;
             flags[3] = downedEclipse;
             flags[4] = downedLegion;
+            flags[5] = downedPumpkinMoon;
+            flags[6] = downedFrostMoon;
         }
 
         public override void NetReceive(BinaryReader reader)
@@ -89,6 +105,8 @@ namespace CompletionMod
             downedBetsy = flags[2];
             downedEclipse = flags[3];
             downedLegion = flags[4];
+            downedPumpkinMoon = flags[5];
+            downedFrostMoon = flags[6];
         }
 
         public override void PostUpdate()
@@ -103,6 +121,17 @@ namespace CompletionMod
             if (Main.invasionType == 0)
                 if (legion)
                     downedLegion = true;
+            if (Main.pumpkinMoon)
+                pumpkin = true;
+            if (Main.snowMoon)
+                frost = true;
+            if (Main.dayTime)
+            {
+                if (pumpkin)
+                    downedPumpkinMoon = true;
+                if (frost)
+                    downedFrostMoon = true;
+            }   
         }
     }
 }

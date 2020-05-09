@@ -237,7 +237,17 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.SnowGlobe);
                     nextSlot++;
                 }
-                
+                if (CompletionModWorld.downedPumpkinMoon)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.PumpkinMoonMedallion);
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedFrostMoon)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.NaughtyPresent);
+                    nextSlot++;
+                }
+
             }
             else if (shop2)
             {
