@@ -232,6 +232,12 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.SolarTablet);
                     nextSlot++;
                 }
+                if (CompletionModWorld.downedLegion)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SnowGlobe);
+                    nextSlot++;
+                }
+                
             }
             else if (shop2)
             {
