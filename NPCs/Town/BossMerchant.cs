@@ -227,6 +227,11 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.PirateMap);
                     nextSlot++;
                 }
+                if (CompletionModWorld.downedEclipse)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SolarTablet);
+                    nextSlot++;
+                }
             }
             else if (shop2)
             {

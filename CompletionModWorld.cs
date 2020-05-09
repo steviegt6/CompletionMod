@@ -11,6 +11,8 @@ namespace CompletionMod
         public static bool downedOgre;
         public static bool downedDarkMage;
         public static bool downedBetsy;
+        public static bool downedEclipse;
+        public static bool eclipse = false;
 
         public override void Initialize()
         {
@@ -18,6 +20,7 @@ namespace CompletionMod
             downedOgre = false;
             downedDarkMage = false;
             downedBetsy = false;
+            downedEclipse = false;
         }
 
         public override void Load(TagCompound tag)
@@ -26,6 +29,7 @@ namespace CompletionMod
             downedOgre = downed.Contains("Ogre");
             downedDarkMage = downed.Contains("DarkMage");
             downedBetsy = downed.Contains("Betsy");
+            downedEclipse = downed.Contains("Eclipse");
         }
 
         public override TagCompound Save()
@@ -43,6 +47,10 @@ namespace CompletionMod
             {
                 downed.Add("Betsy");
             }
+            if (downedEclipse)
+            {
+                downed.Add("Eclipse");
+            }
             return new TagCompound
             {
                 ["downed"] = downed
@@ -58,6 +66,7 @@ namespace CompletionMod
                 downedOgre = flags[0];
                 downedDarkMage = flags[1];
                 downedBetsy = flags[2];
+                downedEclipse = flags[3];
             }
             else
             {
@@ -71,6 +80,7 @@ namespace CompletionMod
             flags[0] = downedOgre;
             flags[1] = downedDarkMage;
             flags[2] = downedBetsy;
+            flags[3] = downedEclipse;
         }
 
         public override void NetReceive(BinaryReader reader)
@@ -79,6 +89,16 @@ namespace CompletionMod
             downedOgre = flags[0];
             downedDarkMage = flags[1];
             downedBetsy = flags[2];
+            downedEclipse = flags[3];
+        }
+
+        public override void PostUpdate()
+        {
+            if (Main.eclipse)
+                eclipse = true;
+            if (!Main.dayTime)
+                if (eclipse)
+                    downedEclipse = true;
         }
     }
 }
