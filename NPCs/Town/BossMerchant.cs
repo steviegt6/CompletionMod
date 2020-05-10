@@ -175,11 +175,11 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.MechanicalSkull);
                     nextSlot++;
                 }
-                /*if (NPC.downedPlantBoss)
+                if (NPC.downedPlantBoss)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("PlanterasBulb"));
                     nextSlot++;
-                }*/
+                }
                 if (NPC.downedGolemBoss)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.LihzahrdPowerCell);
