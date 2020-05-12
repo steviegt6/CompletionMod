@@ -222,9 +222,12 @@ namespace CompletionMod.NPCs.Town
                 }
                 if (NPC.downedPirates)
                 {
-                    shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
-                    nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.PirateMap);
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedPirateShip)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("PiratesSail"));
                     nextSlot++;
                 }
                 if (CompletionModWorld.downedEclipse)

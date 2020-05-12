@@ -22,6 +22,9 @@ namespace CompletionMod.NPCs
                 case NPCID.DD2DarkMageT3:
                     CompletionModWorld.downedDarkMage = true;
                     break;
+                case NPCID.PirateShip:
+                    CompletionModWorld.downedPirateShip = true;
+                    break;
             }
         }
     }

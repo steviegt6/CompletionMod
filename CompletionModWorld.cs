@@ -19,6 +19,7 @@ namespace CompletionMod
         public static bool pumpkin = false;
         public static bool downedFrostMoon;
         public static bool frost = false;
+        public static bool downedPirateShip;
 
         public override void Initialize()
         {
@@ -30,6 +31,7 @@ namespace CompletionMod
             downedLegion = false;
             downedPumpkinMoon = false;
             downedFrostMoon = false;
+            downedPirateShip = false;
         }
 
         public override void Load(TagCompound tag)
@@ -42,6 +44,7 @@ namespace CompletionMod
             downedLegion = downed.Contains("Legion");
             downedPumpkinMoon = downed.Contains("PumpkinMoon");
             downedFrostMoon = downed.Contains("ForstMoon");
+            downedPirateShip = downed.Contains("PirateShip");
         }
 
         public override TagCompound Save()
@@ -61,6 +64,8 @@ namespace CompletionMod
                 downed.Add("PumpkinMoon");
             if (downedFrostMoon)
                 downed.Add("FrostMoon");
+            if (downedPirateShip)
+                downed.Add("PirateShip");
             return new TagCompound
             {
                 ["downed"] = downed
@@ -80,6 +85,7 @@ namespace CompletionMod
                 downedLegion = flags[4];
                 downedPumpkinMoon = flags[5];
                 downedFrostMoon = flags[6];
+                downedPirateShip = flags[7]; //Note to Self: flags2
             }
             else
                 mod.Logger.WarnFormat("CompletionMod: Unknown loadVersion: {0}", loadVersion);
@@ -95,6 +101,7 @@ namespace CompletionMod
             flags[4] = downedLegion;
             flags[5] = downedPumpkinMoon;
             flags[6] = downedFrostMoon;
+            flags[7] = downedPirateShip;
         }
 
         public override void NetReceive(BinaryReader reader)
@@ -107,6 +114,7 @@ namespace CompletionMod
             downedLegion = flags[4];
             downedPumpkinMoon = flags[5];
             downedFrostMoon = flags[6];
+            downedPirateShip = flags[7];
         }
 
         public override void PostUpdate()
