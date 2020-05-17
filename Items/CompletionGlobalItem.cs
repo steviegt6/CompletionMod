@@ -4,41 +4,52 @@ using Terraria.ModLoader;
 using CompletionMod;
 using static Terraria.ModLoader.ModContent;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace CompletionMod.Items
 {
     public class CompletionGlobalItem : GlobalItem
     {
-        public override bool CloneNewInstances => /*base.CloneNewInstances;*/ true;
+        public override bool CloneNewInstances => true;
+        public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
+        {
+            switch(item.type)
+            {
+                case ItemID.GuideVoodooDoll:
+                    TooltipLine addTooltip1 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to be dropped in lava or the Guide dying once the Wall of Flesh has been defeated.");
+                    TooltipLine addTooltip2 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to be dropped in lava or the Guide dying.");
+                    if (!Main.hardMode)
+                        tooltips.Add(addTooltip1);
+                    else
+                        tooltips.Add(addTooltip2);
+                    break;
+                case ItemID.ClothierVoodooDoll:
+                    TooltipLine addTooltip11 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to kill the Clothier once Skeletron has been defeated.");
+                    TooltipLine addTooltip22 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to kill the Clothier.");
+                    if (!NPC.downedBoss3)
+                        tooltips.Add(addTooltip11);
+                    else
+                        tooltips.Add(addTooltip22);
+                    break;
+            }
+        }
         public override void SetDefaults(Item item)
         {
-            base.SetDefaults(item);
             if (Config.Instance.MaxStackEnabled)
-            {
                 if (!(item.type == ItemID.CopperCoin || item.type == ItemID.SilverCoin || item.type == ItemID.GoldCoin))
                 {
                     if (item.maxStack == 30 || item.maxStack == 50 || item.maxStack == 75 || item.maxStack == 20)
-                    {
                         item.maxStack = 99;
-                    }
                     else if (item.accessory == true || (item.damage > 0 && (item.type != ItemID.PlatinumCoin || item.ammo >= 1)) || item.defense > 0)
-                    {
                         item.maxStack = 1;
-                    }
                     else
-                    {
                         item.maxStack = 9999;
-                    }
                 }
                 else
-                {
                     base.SetDefaults(item);
-                }
-            }
             else
-            {
                 base.SetDefaults(item);
-            }
             switch (item.type)
             {
                 case ItemID.SlimeCrown:
@@ -54,12 +65,6 @@ namespace CompletionMod.Items
                 case ItemID.Abeemination:
                     item.value = 7 * 100 * 100 + (50 * 100);
                     break;
-                case ItemID.ClothierVoodooDoll:
-                    item.value = 15 * 100 * 100;
-                    break;
-                case ItemID.GuideVoodooDoll:
-                    item.value = 20 * 100 * 100;
-                    break;
                 case ItemID.PirateMap:
                     item.value = 20 * 100 * 100;
                     break;
@@ -67,6 +72,20 @@ namespace CompletionMod.Items
                     item.value = 10 * 100;
                     break;
             }
+        }
+        public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        {
+            switch (item.type)
+            {
+            }
+            return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+        }
+        public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+        {
+            switch (item.type)
+            {
+            }
+            return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
         public override void OpenVanillaBag(string context, Player player, int arg)
         {

@@ -28,7 +28,7 @@ namespace CompletionMod.Items.Summons
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-            if (NPC.downedPirates)
+            if (CompletionModWorld.downedPirateShip)
             {
                 Texture2D texture = mod.GetTexture("Glowmasks/PiratesSail");
 
@@ -45,7 +45,7 @@ namespace CompletionMod.Items.Summons
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            if (NPC.downedPirates)
+            if (CompletionModWorld.downedPirateShip)
             {
                 Texture2D texture = mod.GetTexture("Glowmasks/PiratesSail");
 

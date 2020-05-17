@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -119,6 +120,8 @@ namespace CompletionMod
 
         public override void PostUpdate()
         {
+            Player player = Main.player[Main.myPlayer];
+
             if (Main.eclipse)
                 eclipse = true;
             if (!Main.dayTime)
@@ -139,7 +142,19 @@ namespace CompletionMod
                     downedPumpkinMoon = true;
                 if (frost)
                     downedFrostMoon = true;
-            }   
+            }
+
+            foreach (Item item in player.inventory)
+            {
+                switch (item.type)
+                {
+                    case ItemID.GuideVoodooDoll:
+                        int stack = item.stack;
+                        item.TurnToAir();
+                        player.QuickSpawnItem(mod.ItemType("ImprovedGuideVoodooDoll"), stack);
+                        break;
+                }
+            }
         }
     }
 }

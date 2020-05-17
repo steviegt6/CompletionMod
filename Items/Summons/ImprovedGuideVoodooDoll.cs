@@ -7,31 +7,32 @@ using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Summons
 {
-    public class PlanterasBulb : ModItem
+    public class ImprovedGuideVoodooDoll : ModItem
     {
+        public override string Texture => "Terraria/Item_267";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Plantera's Bulb");
+            DisplayName.SetDefault("Improved Guide Voodoo Doll");
             Tooltip.SetDefault("Summons Plantera");
         }
 
         public override void SetDefaults()
         {
+            item.CloneDefaults(ItemID.GuideVoodooDoll);
             item.useStyle = 4;
-            item.width = 32;
-            item.height = 28;
             item.consumable = true;
             item.useAnimation = 45;
             item.useTime = 45;
             item.maxStack = 20;
-            item.value = 30 * 100 * 100;
+            item.value = 20 * 100 * 100;
+            item.accessory = false;
         }
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-            if (NPC.downedPlantBoss)
+            if (Main.hardMode)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/PlanterasBulb");
+                Texture2D texture = mod.GetTexture("Glowmasks/GuideVoodooDoll");
 
                 Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
 
@@ -46,9 +47,9 @@ namespace CompletionMod.Items.Summons
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            if (NPC.downedPlantBoss)
+            if (Main.hardMode)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/PlanterasBulb");
+                Texture2D texture = mod.GetTexture("Glowmasks/GuideVoodooDoll");
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -61,17 +62,17 @@ namespace CompletionMod.Items.Summons
 
         public override bool CanUseItem(Player player)
         {
-            if (player.ZoneJungle && player.ZoneRockLayerHeight && (!NPC.AnyNPCs(NPCID.Plantera) || NPC.downedPlantBoss))
+            if (player.ZoneUnderworldHeight && Main.hardMode)
                 return true;
             else
                 return false;
         }
         public override bool UseItem(Player player)
         {
-            if (NPC.downedPlantBoss)
-                CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.Plantera);
+            if (Main.hardMode)
+                NPC.SpawnWOF(player.position);
             else
-                NPC.SpawnOnPlayer(player.whoAmI, NPCID.Plantera);
+                NPC.SpawnWOF(player.position);
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;
         }
