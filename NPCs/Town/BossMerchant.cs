@@ -157,7 +157,7 @@ namespace CompletionMod.NPCs.Town
                 }
                 if (Main.hardMode)
                 {
-                    shop.item[nextSlot].SetDefaults(ItemID.GuideVoodooDoll);
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("ImprovedGuideVoodooDoll"));
                     nextSlot++;
                 }
                 if (NPC.downedMechBoss1)

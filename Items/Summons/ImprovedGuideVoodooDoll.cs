@@ -12,8 +12,8 @@ namespace CompletionMod.Items.Summons
         public override string Texture => "Terraria/Item_267";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Improved Guide Voodoo Doll");
-            Tooltip.SetDefault("Summons Plantera");
+            DisplayName.SetDefault("Guide Voodoo Doll");
+            Tooltip.SetDefault("Can summon the Wall of Flesh without killing the Guide.");
         }
 
         public override void SetDefaults()
@@ -62,16 +62,13 @@ namespace CompletionMod.Items.Summons
 
         public override bool CanUseItem(Player player)
         {
-            if (player.ZoneUnderworldHeight && Main.hardMode)
+            if (player.ZoneUnderworldHeight && (!NPC.AnyNPCs(NPCID.WallofFlesh) || Main.hardMode))
                 return true;
             else
                 return false;
         }
         public override bool UseItem(Player player)
         {
-            if (Main.hardMode)
-                NPC.SpawnWOF(player.position);
-            else
                 NPC.SpawnWOF(player.position);
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;

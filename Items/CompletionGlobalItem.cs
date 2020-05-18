@@ -14,25 +14,6 @@ namespace CompletionMod.Items
         public override bool CloneNewInstances => true;
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            switch(item.type)
-            {
-                case ItemID.GuideVoodooDoll:
-                    TooltipLine addTooltip1 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to be dropped in lava or the Guide dying once the Wall of Flesh has been defeated.");
-                    TooltipLine addTooltip2 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to be dropped in lava or the Guide dying.");
-                    if (!Main.hardMode)
-                        tooltips.Add(addTooltip1);
-                    else
-                        tooltips.Add(addTooltip2);
-                    break;
-                case ItemID.ClothierVoodooDoll:
-                    TooltipLine addTooltip11 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to kill the Clothier once Skeletron has been defeated.");
-                    TooltipLine addTooltip22 = new TooltipLine(mod, "prebossinfo", "Can be consumed without the need to kill the Clothier.");
-                    if (!NPC.downedBoss3)
-                        tooltips.Add(addTooltip11);
-                    else
-                        tooltips.Add(addTooltip22);
-                    break;
-            }
         }
         public override void SetDefaults(Item item)
         {

@@ -149,9 +149,26 @@ namespace CompletionMod
                 switch (item.type)
                 {
                     case ItemID.GuideVoodooDoll:
-                        int stack = item.stack;
-                        item.TurnToAir();
-                        player.QuickSpawnItem(mod.ItemType("ImprovedGuideVoodooDoll"), stack);
+                        if(Main.mouseItem.type != ItemID.GuideVoodooDoll)
+                        {
+                            int stack = item.stack;
+                            item.TurnToAir();
+                            Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack, true, 0, true);
+                        }
+                        break;
+                }
+            }
+            foreach (Item item in Main.item)
+            {
+                switch (item.type)
+                {
+                    case ItemID.GuideVoodooDoll:
+                        if (item.active)
+                        {
+                            int stack = item.stack;
+                            item.TurnToAir();
+                            Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack);
+                        }
                         break;
                 }
             }
