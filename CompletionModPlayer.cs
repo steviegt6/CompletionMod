@@ -193,7 +193,6 @@ namespace CompletionMod
 													break;
 												}
 										goto IL_7F7;
-									goto IL_7F7;
 								}
 							IL_7FF:
 								num19++;
@@ -227,8 +226,8 @@ namespace CompletionMod
 							Main.npc[num31].target = plr;
 							Main.npc[num31].timeLeft *= 20;
 							string typeName3 = Main.npc[num31].TypeName;
-							if (Main.netMode == 2 && num31 < 200)
-								NetMessage.SendData(23, -1, -1, null, num31, 0f, 0f, 0f, 0, 0, 0);
+							if (Main.netMode == NetmodeID.Server && num31 < 200)
+								NetMessage.SendData(MessageID.SyncNPC, -1, -1, null, num31, 0f, 0f, 0f, 0, 0, 0);
 							if (Type == 134 || Type == 127 || Type == 126 || Type == 125)
 								AchievementsHelper.CheckMechaMayhem(-1);
 							if (Type == 125)

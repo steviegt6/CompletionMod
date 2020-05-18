@@ -5,6 +5,7 @@ using Terraria.Localization;
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using CompletionMod.HelpersHandlersandUtils;
 
 namespace CompletionMod
 {
@@ -41,9 +42,12 @@ namespace CompletionMod
 			text.SetDefault("[i:" + item + "][c/" + color + ": " + name + "]");
 			AddTranslation(text);
 		}
+		public override void PostAddRecipes()
+		{
+			RecipeHelper.GuideVoodooDollRecplacement(this);
+		}
 		public override void AddRecipes()
 		{
-			base.AddRecipes();
 			addCandyCaneRecipes();
 			addMiscItemRecipes();
 		}
