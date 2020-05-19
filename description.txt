@@ -9,10 +9,6 @@ https://github.com/Steviegt6/
 [c/1C1C1C:Website]
 https://steviegt6.github.io/
 ===========================================
-[c/1C1C1C:Credits]
-Steviegt6: Main coder, developer, and spriter.
-Fargo's Soul Mod: AddToggle Code (The cool-looking configs with items and colored text)
-===========================================
 
 [c/151515:v1.0.0]
 - Initial mod release.

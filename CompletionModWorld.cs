@@ -21,6 +21,8 @@ namespace CompletionMod
         public static bool downedFrostMoon;
         public static bool frost = false;
         public static bool downedPirateShip;
+        
+        public static float tick;
 
         public override void Initialize()
         {
@@ -121,6 +123,8 @@ namespace CompletionMod
         public override void PostUpdate()
         {
             Player player = Main.player[Main.myPlayer];
+
+            tick = Main.GameUpdateCount % 60 / 60f;
 
             if (Main.eclipse)
                 eclipse = true;

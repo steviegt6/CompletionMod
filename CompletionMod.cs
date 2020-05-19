@@ -6,12 +6,18 @@ using System;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using CompletionMod.HelpersHandlersandUtils;
+using Microsoft.Xna.Framework;
 
 namespace CompletionMod
 {
 	public class CompletionMod : Mod
 	{
 		internal static CompletionMod Instance;
+
+		public static int InfiniR = 255;
+		public static int InfiniB = 0;
+		public static int InfiniG = 0;
+		public static int InfiniStyle;
 
 		public override void Load()
 		{
@@ -23,6 +29,109 @@ namespace CompletionMod
 		public override void Unload()
 		{
 			Instance = null;
+		}
+
+		public static void DoUpdate_AnimeInfiniRGB()
+		{
+			int num = 30;
+			if (InfiniStyle == 0)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 1)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 2)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 3)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 4)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 5)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 6)
+			{
+				InfiniR -= num;
+				if (InfiniR < 0)
+					InfiniR = 0;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 7)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 8)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 9)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 10)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 11)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 12)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle++;
+			}
+			if (InfiniStyle == 13)
+			{
+				InfiniR += num;
+				if (InfiniR > 255)
+					InfiniR = 255;
+				InfiniStyle = 0;
+			}
 		}
 
 	// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
