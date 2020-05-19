@@ -149,11 +149,19 @@ namespace CompletionMod
                 switch (item.type)
                 {
                     case ItemID.GuideVoodooDoll:
-                        if(Main.mouseItem.type != ItemID.GuideVoodooDoll)
+                        if (Main.mouseItem.type != ItemID.GuideVoodooDoll)
                         {
                             int stack = item.stack;
                             item.TurnToAir();
                             Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack, true, 0, true);
+                        }
+                        break;
+                    case ItemID.ClothierVoodooDoll:
+                        if (Main.mouseItem.type != ItemID.ClothierVoodooDoll)
+                        {
+                            int stack = item.stack;
+                            item.TurnToAir();
+                            Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack, true, 0, true);
                         }
                         break;
                 }
@@ -168,6 +176,14 @@ namespace CompletionMod
                             int stack = item.stack;
                             item.TurnToAir();
                             Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack);
+                        }
+                        break;
+                    case ItemID.ClothierVoodooDoll:
+                        if (item.active)
+                        {
+                            int stack = item.stack;
+                            item.TurnToAir();
+                            Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack);
                         }
                         break;
                 }

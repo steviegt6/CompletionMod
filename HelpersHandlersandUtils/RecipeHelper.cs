@@ -27,6 +27,25 @@ namespace CompletionMod.HelpersHandlersandUtils
 				RecipeEditor editor = new RecipeEditor(recipe);
 				editor.SetResult(mod.ItemType("ImprovedGuideVoodooDoll"));
 			}
+
+			finder = new RecipeFinder();
+			finder.AddIngredient(ItemID.ClothierVoodooDoll);
+
+			foreach (Recipe recipe in finder.SearchRecipes())
+			{
+				RecipeEditor editor = new RecipeEditor(recipe);
+				editor.DeleteIngredient(ItemID.ClothierVoodooDoll);
+				editor.AddIngredient(mod.ItemType("ImprovedClothierVoodooDoll"));
+			}
+
+			finder = new RecipeFinder();
+			finder.SetResult(ItemID.ClothierVoodooDoll);
+
+			foreach (Recipe recipe in finder.SearchRecipes())
+			{
+				RecipeEditor editor = new RecipeEditor(recipe);
+				editor.SetResult(mod.ItemType("ImprovedClothierVoodooDoll"));
+			}
 		}
     }
 }

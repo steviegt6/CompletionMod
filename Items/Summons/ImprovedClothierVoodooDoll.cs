@@ -7,32 +7,33 @@ using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Summons
 {
-    public class ImprovedGuideVoodooDoll : ModItem
+    public class ImprovedClothierVoodooDoll : ModItem
     {
-        public override string Texture => "Terraria/Item_267";
+        public override string Texture => "Terraria/Item_1307";
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Guide Voodoo Doll");
-            Tooltip.SetDefault("Can summon the Wall of Flesh without killing the Guide.");
+            DisplayName.SetDefault("Clothier Voodoo Doll");
+            Tooltip.SetDefault("Can summon Skeletron without killing the Clothier." +
+                "\nUse during the day to summon a Dungeon Guardian.");
         }
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.GuideVoodooDoll);
+            item.CloneDefaults(ItemID.ClothierVoodooDoll);
             item.useStyle = ItemUseStyleID.HoldingUp;
             item.consumable = true;
             item.useAnimation = 45;
             item.useTime = 45;
             item.maxStack = 20;
-            item.value = 20 * 100 * 100;
+            item.value = 15 * 100 * 100;
             item.accessory = false;
         }
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-            if (Main.hardMode)
+            if (NPC.downedBoss3)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/GuideVoodooDoll");
+                Texture2D texture = mod.GetTexture("Glowmasks/ClothierVoodooDoll");
 
                 Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
 
@@ -49,7 +50,7 @@ namespace CompletionMod.Items.Summons
         {
             if (Main.hardMode)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/GuideVoodooDoll");
+                Texture2D texture = mod.GetTexture("Glowmasks/ClothierVoodooDoll");
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -62,14 +63,17 @@ namespace CompletionMod.Items.Summons
 
         public override bool CanUseItem(Player player)
         {
-            if (player.ZoneUnderworldHeight && (!NPC.AnyNPCs(NPCID.WallofFlesh) || Main.hardMode))
+            if ((!Main.dayTime && (!NPC.AnyNPCs(NPCID.SkeletronHead) || NPC.downedBoss3)) || (Main.dayTime || !NPC.AnyNPCs(NPCID.DungeonGuardian)))
                 return true;
             else
                 return false;
         }
         public override bool UseItem(Player player)
         {
-                NPC.SpawnWOF(player.position);
+            if (Main.dayTime)
+                NPC.SpawnOnPlayer(player.whoAmI, NPCID.DungeonGuardian);
+            if (!Main.dayTime)
+                NPC.SpawnOnPlayer(player.whoAmI, NPCID.SkeletronHead);
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;
         }
