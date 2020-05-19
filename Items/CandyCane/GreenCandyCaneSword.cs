@@ -16,6 +16,7 @@ namespace CompletionMod.Items.CandyCane
         {
             base.SetDefaults();
             item.CloneDefaults(ItemID.CandyCaneSword);
+            item.damage = 18;
         }
         public override void AddRecipes()
         {

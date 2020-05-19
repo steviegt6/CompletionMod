@@ -17,6 +17,8 @@ namespace CompletionMod.Items.CandyCane
         {
             base.SetDefaults();
             item.CloneDefaults(ItemID.CnadyCanePickaxe);
+            item.pick = 60;
+            item.useTime = 20;
         }
         public override void AddRecipes()
         {
