@@ -16,7 +16,7 @@ namespace CompletionMod.Items.Summons
 
         public override void SetDefaults()
         {
-            item.useStyle = 4;
+            item.useStyle = ItemUseStyleID.HoldingUp;
             item.width = 22;
             item.height = 14;
             item.consumable = true;

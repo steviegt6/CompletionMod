@@ -23,8 +23,11 @@ namespace CompletionMod
 		{
 			Instance = this;
 
-			AddToggle("Misc", "Miscellaneous", 575, "42CEE4");
-			AddToggle("MaxStack", "Max Stack Increase", 3095, "89909B");
+			AddToggle("General", "General", ItemID.Acorn, "6B5D37");
+			AddToggle("AutoConvert", "Auto-Convert Boss Summons", ItemID.SuspiciousLookingEye, "FFFFFF");
+
+			AddToggle("Misc", "Miscellaneous", ItemID.SoulofFlight, "42CEE4");
+			AddToggle("MaxStack", "Max Stack Increase", ItemID.TallyCounter, "89909B");
 		}
 		public override void Unload()
 		{

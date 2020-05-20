@@ -1,9 +1,8 @@
-displayName = [c/FFD700:Compl][c/ffb84d:etion]
+displayName = [c/FFD700:Completion] [c/ffb84d:Mod]
 author = Steviegt6 (convicted tomatophile)
 version = 1.0.0
 homepage = https://discordapp.com/invite/qrZ4Bpz
 Icon = icon.png
-sortAfter = CalamityMod, ThoriumMod, SacredTools
 weakReferences = CalamityMod, ThoriumMod, SacredTools
 includeSource = false
 hideCode = true

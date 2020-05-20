@@ -150,46 +150,52 @@ namespace CompletionMod
 
             foreach (Item item in player.inventory)
             {
-                switch (item.type)
+                if (Config.Instance.AutoConvert)
                 {
-                    case ItemID.GuideVoodooDoll:
-                        if (Main.mouseItem.type != ItemID.GuideVoodooDoll)
-                        {
-                            int stack = item.stack;
-                            item.TurnToAir();
-                            Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack, true, 0, true);
-                        }
-                        break;
-                    case ItemID.ClothierVoodooDoll:
-                        if (Main.mouseItem.type != ItemID.ClothierVoodooDoll)
-                        {
-                            int stack = item.stack;
-                            item.TurnToAir();
-                            Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack, true, 0, true);
-                        }
-                        break;
+                    switch (item.type)
+                    {
+                        case ItemID.GuideVoodooDoll:
+                            if (Main.mouseItem.type != ItemID.GuideVoodooDoll)
+                            {
+                                int stack = item.stack;
+                                item.TurnToAir();
+                                Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack, true, 0, true);
+                            }
+                            break;
+                        case ItemID.ClothierVoodooDoll:
+                            if (Main.mouseItem.type != ItemID.ClothierVoodooDoll)
+                            {
+                                int stack = item.stack;
+                                item.TurnToAir();
+                                Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack, true, 0, true);
+                            }
+                            break;
+                    }
                 }
             }
             foreach (Item item in Main.item)
             {
-                switch (item.type)
+                if (Config.Instance.AutoConvert)
                 {
-                    case ItemID.GuideVoodooDoll:
-                        if (item.active)
-                        {
-                            int stack = item.stack;
-                            item.TurnToAir();
-                            Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack);
-                        }
-                        break;
-                    case ItemID.ClothierVoodooDoll:
-                        if (item.active)
-                        {
-                            int stack = item.stack;
-                            item.TurnToAir();
-                            Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack);
-                        }
-                        break;
+                    switch (item.type)
+                    {
+                        case ItemID.GuideVoodooDoll:
+                            if (item.active)
+                            {
+                                int stack = item.stack;
+                                item.TurnToAir();
+                                Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack);
+                            }
+                            break;
+                        case ItemID.ClothierVoodooDoll:
+                            if (item.active)
+                            {
+                                int stack = item.stack;
+                                item.TurnToAir();
+                                Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedClothierVoodooDoll"), stack);
+                            }
+                            break;
+                    }
                 }
             }
         }
