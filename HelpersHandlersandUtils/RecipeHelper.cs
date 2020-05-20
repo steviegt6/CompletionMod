@@ -7,44 +7,47 @@ namespace CompletionMod.HelpersHandlersandUtils
 {
     public static class RecipeHelper
     {
-        public static void GuideVoodooDollRecplacement(Mod mod)
+        public static void SummonReplacements(Mod mod)
         {
-			RecipeFinder finder = new RecipeFinder();
-			finder.AddIngredient(ItemID.GuideVoodooDoll);
-
-			foreach (Recipe recipe in finder.SearchRecipes())
+			if (Config.Instance.AutoConvert)
 			{
-				RecipeEditor editor = new RecipeEditor(recipe);
-				editor.DeleteIngredient(ItemID.GuideVoodooDoll);
-				editor.AddIngredient(mod.ItemType("ImprovedGuideVoodooDoll"));
-			}
+				RecipeFinder finder = new RecipeFinder();
+				finder.AddIngredient(ItemID.GuideVoodooDoll);
 
-			finder = new RecipeFinder();
-			finder.SetResult(ItemID.GuideVoodooDoll);
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.DeleteIngredient(ItemID.GuideVoodooDoll);
+					editor.AddIngredient(mod.ItemType("ImprovedGuideVoodooDoll"));
+				}
 
-			foreach (Recipe recipe in finder.SearchRecipes())
-			{
-				RecipeEditor editor = new RecipeEditor(recipe);
-				editor.SetResult(mod.ItemType("ImprovedGuideVoodooDoll"));
-			}
+				finder = new RecipeFinder();
+				finder.SetResult(ItemID.GuideVoodooDoll);
 
-			finder = new RecipeFinder();
-			finder.AddIngredient(ItemID.ClothierVoodooDoll);
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.SetResult(mod.ItemType("ImprovedGuideVoodooDoll"));
+				}
 
-			foreach (Recipe recipe in finder.SearchRecipes())
-			{
-				RecipeEditor editor = new RecipeEditor(recipe);
-				editor.DeleteIngredient(ItemID.ClothierVoodooDoll);
-				editor.AddIngredient(mod.ItemType("ImprovedClothierVoodooDoll"));
-			}
+				finder = new RecipeFinder();
+				finder.AddIngredient(ItemID.ClothierVoodooDoll);
 
-			finder = new RecipeFinder();
-			finder.SetResult(ItemID.ClothierVoodooDoll);
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.DeleteIngredient(ItemID.ClothierVoodooDoll);
+					editor.AddIngredient(mod.ItemType("ImprovedClothierVoodooDoll"));
+				}
 
-			foreach (Recipe recipe in finder.SearchRecipes())
-			{
-				RecipeEditor editor = new RecipeEditor(recipe);
-				editor.SetResult(mod.ItemType("ImprovedClothierVoodooDoll"));
+				finder = new RecipeFinder();
+				finder.SetResult(ItemID.ClothierVoodooDoll);
+
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.SetResult(mod.ItemType("ImprovedClothierVoodooDoll"));
+				}
 			}
 		}
     }

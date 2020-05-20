@@ -156,7 +156,7 @@ namespace CompletionMod
 		}
 		public override void PostAddRecipes()
 		{
-			RecipeHelper.GuideVoodooDollRecplacement(this);
+			RecipeHelper.SummonReplacements(this);
 		}
 		public override void AddRecipes()
 		{

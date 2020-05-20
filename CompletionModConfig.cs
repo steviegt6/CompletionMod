@@ -8,6 +8,7 @@ using System.ComponentModel;
 
 namespace CompletionMod
 {
+	[Label("Completion Config")]
 	public class Config : ModConfig
 	{
 		public override ConfigScope Mode => ConfigScope.ServerSide;
