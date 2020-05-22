@@ -9,7 +9,7 @@ namespace CompletionMod.Items.CandyCane
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            DisplayName.SetDefault("Green Candy Cane Pickaxe");
+            DisplayName.SetDefault("Green Candy Cane Sword");
             //Tooltip.SetDefault("");
         }
         public override void SetDefaults()

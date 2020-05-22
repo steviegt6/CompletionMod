@@ -48,7 +48,7 @@ namespace CompletionMod.Items.Summons
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            if (Main.hardMode)
+            if (NPC.downedBoss3)
             {
                 Texture2D texture = mod.GetTexture("Glowmasks/ClothierVoodooDoll");
 

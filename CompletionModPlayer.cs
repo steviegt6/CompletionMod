@@ -17,6 +17,60 @@ namespace CompletionMod
 		private static int spawnRangeX = (int)((double)(NPC.sWidth / 16) * 0.7);
 		private static int spawnRangeY = (int)((double)(NPC.sHeight / 16) * 0.7);
 
+		public static void SpawnCompletionWOF(Vector2 pos)
+		{
+			if (pos.Y / 16f < (float)(Main.maxTilesY - 205) || Main.netMode == 1)
+				return;
+			Player.FindClosest(pos, 16, 16);
+			int num14 = 1;
+			if (pos.X / 16f > (float)(Main.maxTilesX / 2))
+				num14 = -1;
+			bool flag = false;
+			int num13 = (int)pos.X;
+			while (!flag)
+			{
+				flag = true;
+				for (int i = 0; i < 255; i++)
+					if (Main.player[i].active && Main.player[i].position.X > (float)(num13 - 1200) && Main.player[i].position.X < (float)(num13 + 1200))
+					{
+						num13 -= num14 * 16;
+						flag = false;
+					}
+				if (num13 / 16 < 20 || num13 / 16 > Main.maxTilesX - 20)
+					flag = true;
+			}
+			int num12 = (int)pos.Y;
+			int num11 = num13 / 16;
+			int num10 = num12 / 16;
+			int num9 = 0;
+			while (true)
+			{
+				try
+				{
+					if (!WorldGen.SolidTile(num11, num10 - num9) && Main.tile[num11, num10 - num9].liquid < 100)
+						num10 -= num9;
+					else
+						if (WorldGen.SolidTile(num11, num10 + num9) || Main.tile[num11, num10 + num9].liquid >= 100)
+						{
+							num9++;
+							continue;
+						}
+						num10 += num9;
+				}
+				catch
+				{
+				}
+				break;
+			}
+			if (num10 < Main.maxTilesY - 180)
+				num10 = Main.maxTilesY - 180;
+			num12 = num10 * 16;
+			int num7 = NPC.NewNPC(num13, num12, 113);
+			if (Main.netMode == 0)
+				Main.NewText(Language.GetTextValue("Announcement.HasAwoken", Main.npc[num7].TypeName), 175, 75);
+			else if (Main.netMode == 2)
+				NetMessage.BroadcastChatMessage(NetworkText.FromKey("Announcement.HasAwoken", Main.npc[num7].GetTypeNetName()), new Color(175, 75, 255));
+		}
 		public static void SpawnOnCompletionPlayer(int plr, int Type)
 		{
 			{

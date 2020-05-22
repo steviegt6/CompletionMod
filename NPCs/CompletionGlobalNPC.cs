@@ -28,6 +28,9 @@ namespace CompletionMod.NPCs
                 case NPCID.PirateShip:
                     CompletionModWorld.downedPirateShip = true;
                     break;
+                case NPCID.DD2Betsy:
+                    CompletionModWorld.downedBetsy = true;
+                    break;
             }
         }
         public override bool Autoload(ref string name) //IL Editing credit goes to Atenfyr! :D
@@ -56,7 +59,7 @@ namespace CompletionMod.NPCs
                     if (!firstButton)
                     {
                         Main.playerInventory = true;
-                        Main.npcChatText = "";
+                        Main.npcChatText = ""; // Closes chat.
                         Main.npcShop = Main.MaxShopIDs - 1;
                         Main.instance.shop[Main.npcShop].SetupShop(NPCID.Angler);
                         Main.PlaySound(SoundID.MenuTick);
@@ -100,18 +103,6 @@ namespace CompletionMod.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.JourneymanBait);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.MasterBait);
-                    nextSlot++;
-                    if  (Main.hardMode)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.FinWings);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.BottomlessBucket);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SuperAbsorbantSponge);
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.HotlineFishingHook);
-                        nextSlot++;
-                    }
                     shop.item[nextSlot].SetDefaults(ItemID.CoralstoneBlock);
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.SeashellHairpin);
@@ -150,6 +141,18 @@ namespace CompletionMod.NPCs
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.ShipInABottle);
                     nextSlot++;
+                    nextSlot++;
+                    if (Main.hardMode)
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.FinWings);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.BottomlessBucket);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.SuperAbsorbantSponge);
+                        nextSlot++;
+                        shop.item[nextSlot].SetDefaults(ItemID.HotlineFishingHook);
+                        nextSlot++;
+                    }
                     break;
             }
         }
