@@ -7,30 +7,31 @@ using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Summons
 {
-    public class DarkTome : ModItem
-    { 
+    public class SpookyTwig : ModItem
+    {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dark Tome");
-            Tooltip.SetDefault("Summons a Dark Mage");
+            DisplayName.SetDefault("Spooky Twig");
+            Tooltip.SetDefault("Summons Mourning Wood");
         }
 
         public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.SuspiciousLookingEye);
             item.useStyle = ItemUseStyleID.HoldingUp;
+            item.width = 32;
+            item.height = 28;
             item.consumable = true;
             item.useAnimation = 45;
             item.useTime = 45;
             item.maxStack = 20;
-            item.value = 15 * 100 * 100;
+            item.value = 10 * 100 * 100;
         }
 
         public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-            if (CompletionModWorld.downedDarkMage || CompletionModWorld.downedDarkMageHard)
+            if (CompletionModWorld.downedMourningWood)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/DarkTome");
+                Texture2D texture = mod.GetTexture("Glowmasks/SpookyTwig");
 
                 Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
 
@@ -45,9 +46,9 @@ namespace CompletionMod.Items.Summons
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            if (CompletionModWorld.downedDarkMage || CompletionModWorld.downedDarkMageHard)
+            if (CompletionModWorld.downedMourningWood)
             {
-                Texture2D texture = mod.GetTexture("Glowmasks/DarkTome");
+                Texture2D texture = mod.GetTexture("Glowmasks/SpookyTwig");
 
                 for (int i = 0; i < 4; i++)
                 {
@@ -60,19 +61,17 @@ namespace CompletionMod.Items.Summons
 
         public override bool CanUseItem(Player player)
         {
-            if (CompletionModWorld.downedDarkMage || CompletionModWorld.downedDarkMageHard || (!NPC.AnyNPCs(NPCID.DD2DarkMageT1) && !NPC.AnyNPCs(NPCID.DD2DarkMageT3)))
+            if (CompletionModWorld.downedMourningWood || !NPC.AnyNPCs(NPCID.MourningWood))
                 return true;
             else
                 return false;
         }
         public override bool UseItem(Player player)
         {
-            if (CompletionModWorld.downedDarkMage && !CompletionModWorld.downedDarkMageHard)
-                CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.DD2DarkMageT1);
-            else if (CompletionModWorld.downedDarkMageHard && !CompletionModWorld.downedDarkMage)
-                CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.DD2DarkMageT1);
+            if (CompletionModWorld.downedMourningWood)
+                CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.MourningWood);
             else
-                NPC.SpawnOnPlayer(player.whoAmI, NPCID.DD2DarkMageT1);
+                NPC.SpawnOnPlayer(player.whoAmI, NPCID.MourningWood);
             Main.PlaySound(SoundID.Roar, player.position, 0);
             return true;
         }

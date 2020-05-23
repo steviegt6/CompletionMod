@@ -23,6 +23,8 @@ namespace CompletionMod
         public static bool downedPirateShip;
         public static bool downedDarkMageHard;
         public static bool downedOgreHard;
+        public static bool downedMourningWood;
+        public static bool downedPumpking;
         
         public static float tick;
 
@@ -39,6 +41,8 @@ namespace CompletionMod
             downedPirateShip = false;
             downedDarkMageHard = false;
             downedOgreHard = false;
+            downedMourningWood = false;
+            downedPumpking = false;
         }
 
         public override void Load(TagCompound tag)
@@ -54,6 +58,8 @@ namespace CompletionMod
             downedPirateShip = downed.Contains("PirateShip");
             downedDarkMageHard = downed.Contains("DarkMageHard");
             downedOgreHard = downed.Contains("OgreHard");
+            downedMourningWood = downed.Contains("MourningWood");
+            downedPumpking = downed.Contains("Pumpking");
         }
 
         public override TagCompound Save()
@@ -79,6 +85,10 @@ namespace CompletionMod
                 downed.Add("DarkMageHard");
             if (downedOgreHard)
                 downed.Add("DownedOgreHard");
+            if (downedMourningWood)
+                downed.Add("MourningWood");
+            if (downedPumpking)
+                downed.Add("Pumpking");
             return new TagCompound
             {
                 ["downed"] = downed
@@ -102,6 +112,8 @@ namespace CompletionMod
                 downedPirateShip = flags[7]; //Note to Self: flags2
                 downedDarkMageHard = flags2[0];
                 downedOgreHard = flags2[1];
+                downedMourningWood = flags2[2];
+                downedPumpking = flags2[3];
             }
             else
                 mod.Logger.WarnFormat("CompletionMod: Unknown loadVersion: {0}", loadVersion);
@@ -121,6 +133,8 @@ namespace CompletionMod
             flags[7] = downedPirateShip;
             flags2[0] = downedDarkMageHard;
             flags2[1] = downedOgreHard;
+            flags2[2] = downedMourningWood;
+            flags2[3] = downedPumpking;
         }
 
         public override void NetReceive(BinaryReader reader)
@@ -137,6 +151,8 @@ namespace CompletionMod
             downedPirateShip = flags[7];
             downedDarkMageHard = flags2[0];
             downedOgreHard = flags2[1];
+            downedMourningWood = flags2[2];
+            downedPumpking = flags2[3];
         }
 
         public override void PostUpdate()
@@ -159,6 +175,10 @@ namespace CompletionMod
                 pumpkin = true;
             if (Main.snowMoon)
                 frost = true;
+            if (NPC.downedHalloweenKing)
+                downedPumpking = true;
+            if (NPC.downedHalloweenTree)
+                downedMourningWood = true;
             if (Main.dayTime)
             {
                 if (pumpkin)

@@ -152,7 +152,7 @@ namespace CompletionMod.NPCs.Town
                 }
                 if (NPC.downedBoss3)
                 {
-                    shop.item[nextSlot].SetDefaults(ItemID.ClothierVoodooDoll);
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("ImprovedClothierVoodooDoll"));
                     nextSlot++;
                 }
                 if (Main.hardMode)
@@ -213,6 +213,16 @@ namespace CompletionMod.NPCs.Town
                 if (CompletionModWorld.downedBetsy)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("BetsysClaw"));
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedMourningWood)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("SpookyTwig"));
+                    nextSlot++;
+                }
+                if (CompletionModWorld.downedPumpking)
+                {
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("SmashedPumpkin"));
                     nextSlot++;
                 }
                 if (NPC.downedGoblins)

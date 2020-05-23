@@ -43,6 +43,12 @@ namespace CompletionMod.NPCs
                 case NPCID.PirateShip:
                     CompletionModWorld.downedPirateShip = true;
                     break;
+                case NPCID.MourningWood:
+                    CompletionModWorld.downedMourningWood = true;
+                    break;
+                case NPCID.Pumpking:
+                    CompletionModWorld.downedPumpking = true;
+                    break;
             }
         }
         public override bool Autoload(ref string name) //IL Editing credit goes to Atenfyr! :D
