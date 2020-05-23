@@ -200,19 +200,19 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.CelestialSigil);
                     nextSlot++;
                 }
-                if (CompletionModWorld.downedOgre)
+                if (CompletionModWorld.downedOgre || CompletionModWorld.downedOgreHard)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("OgresHead"));
                     nextSlot++;
                 }
-                if (CompletionModWorld.downedDarkMage)
+                if (CompletionModWorld.downedDarkMage || CompletionModWorld.downedDarkMageHard)
                 {
                     shop.item[nextSlot].SetDefaults(mod.ItemType("DarkTome"));
                     nextSlot++;
                 }
                 if (CompletionModWorld.downedBetsy)
                 {
-                    shop.item[nextSlot].SetDefaults(mod.ItemType("DragonFoot"));
+                    shop.item[nextSlot].SetDefaults(mod.ItemType("BetsysClaw"));
                     nextSlot++;
                 }
                 if (NPC.downedGoblins)

@@ -19,7 +19,7 @@ namespace CompletionMod
 
 		public static void SpawnCompletionWOF(Vector2 pos)
 		{
-			if (pos.Y / 16f < (float)(Main.maxTilesY - 205) || Main.netMode == 1)
+			if (pos.Y / 16f < (float)(Main.maxTilesY - 205) || Main.netMode == NetmodeID.MultiplayerClient)
 				return;
 			Player.FindClosest(pos, 16, 16);
 			int num14 = 1;
@@ -66,9 +66,9 @@ namespace CompletionMod
 				num10 = Main.maxTilesY - 180;
 			num12 = num10 * 16;
 			int num7 = NPC.NewNPC(num13, num12, 113);
-			if (Main.netMode == 0)
+			if (Main.netMode == NetmodeID.SinglePlayer)
 				Main.NewText(Language.GetTextValue("Announcement.HasAwoken", Main.npc[num7].TypeName), 175, 75);
-			else if (Main.netMode == 2)
+			else if (Main.netMode == NetmodeID.Server)
 				NetMessage.BroadcastChatMessage(NetworkText.FromKey("Announcement.HasAwoken", Main.npc[num7].GetTypeNetName()), new Color(175, 75, 255));
 		}
 		public static void SpawnOnCompletionPlayer(int plr, int Type)

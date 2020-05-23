@@ -21,6 +21,8 @@ namespace CompletionMod
         public static bool downedFrostMoon;
         public static bool frost = false;
         public static bool downedPirateShip;
+        public static bool downedDarkMageHard;
+        public static bool downedOgreHard;
         
         public static float tick;
 
@@ -35,6 +37,8 @@ namespace CompletionMod
             downedPumpkinMoon = false;
             downedFrostMoon = false;
             downedPirateShip = false;
+            downedDarkMageHard = false;
+            downedOgreHard = false;
         }
 
         public override void Load(TagCompound tag)
@@ -48,6 +52,8 @@ namespace CompletionMod
             downedPumpkinMoon = downed.Contains("PumpkinMoon");
             downedFrostMoon = downed.Contains("ForstMoon");
             downedPirateShip = downed.Contains("PirateShip");
+            downedDarkMageHard = downed.Contains("DarkMageHard");
+            downedOgreHard = downed.Contains("OgreHard");
         }
 
         public override TagCompound Save()
@@ -69,6 +75,10 @@ namespace CompletionMod
                 downed.Add("FrostMoon");
             if (downedPirateShip)
                 downed.Add("PirateShip");
+            if (downedDarkMageHard)
+                downed.Add("DarkMageHard");
+            if (downedOgreHard)
+                downed.Add("DownedOgreHard");
             return new TagCompound
             {
                 ["downed"] = downed
@@ -81,6 +91,7 @@ namespace CompletionMod
             if (loadVersion == 0)
             {
                 BitsByte flags = reader.ReadByte();
+                BitsByte flags2 = reader.ReadByte();
                 downedOgre = flags[0];
                 downedDarkMage = flags[1];
                 downedBetsy = flags[2];
@@ -89,6 +100,8 @@ namespace CompletionMod
                 downedPumpkinMoon = flags[5];
                 downedFrostMoon = flags[6];
                 downedPirateShip = flags[7]; //Note to Self: flags2
+                downedDarkMageHard = flags2[0];
+                downedOgreHard = flags2[1];
             }
             else
                 mod.Logger.WarnFormat("CompletionMod: Unknown loadVersion: {0}", loadVersion);
@@ -97,6 +110,7 @@ namespace CompletionMod
         public override void NetSend(BinaryWriter writer)
         {
             var flags = new BitsByte();
+            var flags2 = new BitsByte();
             flags[0] = downedOgre;
             flags[1] = downedDarkMage;
             flags[2] = downedBetsy;
@@ -105,11 +119,14 @@ namespace CompletionMod
             flags[5] = downedPumpkinMoon;
             flags[6] = downedFrostMoon;
             flags[7] = downedPirateShip;
+            flags2[0] = downedDarkMageHard;
+            flags2[1] = downedOgreHard;
         }
 
         public override void NetReceive(BinaryReader reader)
         {
             BitsByte flags = reader.ReadByte();
+            BitsByte flags2 = reader.ReadByte();
             downedOgre = flags[0];
             downedDarkMage = flags[1];
             downedBetsy = flags[2];
@@ -118,6 +135,8 @@ namespace CompletionMod
             downedPumpkinMoon = flags[5];
             downedFrostMoon = flags[6];
             downedPirateShip = flags[7];
+            downedDarkMageHard = flags2[0];
+            downedOgreHard = flags2[1];
         }
 
         public override void PostUpdate()

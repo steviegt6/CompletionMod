@@ -25,7 +25,7 @@ namespace CompletionMod.Items.Summons
             item.useAnimation = 45;
             item.useTime = 45;
             item.maxStack = 20;
-            item.value = 15 * 100 * 100;
+            item.value = 15 * 100 * 100 + (75 * 100);
             item.accessory = false;
         }
 

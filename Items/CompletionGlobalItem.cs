@@ -34,23 +34,26 @@ namespace CompletionMod.Items
             switch (item.type)
             {
                 case ItemID.SlimeCrown:
-                    item.value = 50 * 100;
+                    item.value = 1 * 100 * 100;
                     break;
                 case ItemID.SuspiciousLookingEye:
                     item.value = 1 * 100 * 100;
                     break;
                 case ItemID.WormFood:
                 case ItemID.BloodySpine:
-                    item.value = 5 * 100 * 100;
+                    item.value = 2 * 100 * 100 + (50 * 100);
                     break;
                 case ItemID.Abeemination:
-                    item.value = 7 * 100 * 100 + (50 * 100);
+                    item.value = 5 * 100 * 100 + (50 * 100);
                     break;
                 case ItemID.PirateMap:
-                    item.value = 20 * 100 * 100;
+                    item.value = 10 * 100 * 100;
                     break;
                 case ItemID.GoblinBattleStandard:
-                    item.value = 10 * 100;
+                    item.value = 1 * 100 * 100;
+                    break;
+                case ItemID.CelestialSigil:
+                    item.value = 10 * 100 * 100;
                     break;
             }
         }

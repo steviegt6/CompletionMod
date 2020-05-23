@@ -18,18 +18,30 @@ namespace CompletionMod.NPCs
             switch (npc.type)
             {
                 case NPCID.DD2OgreT2:
+                    if (!CompletionModWorld.downedOgreHard)
+                        CompletionModWorld.downedOgre = true;
+                    break;
                 case NPCID.DD2OgreT3:
-                    CompletionModWorld.downedOgre = true;
+                    {
+                        CompletionModWorld.downedOgre = false;
+                        CompletionModWorld.downedOgreHard = true;
+                    }
                     break;
                 case NPCID.DD2DarkMageT1:
-                case NPCID.DD2DarkMageT3:
-                    CompletionModWorld.downedDarkMage = true;
+                    if (!CompletionModWorld.downedDarkMageHard)
+                        CompletionModWorld.downedDarkMage = true;
                     break;
-                case NPCID.PirateShip:
-                    CompletionModWorld.downedPirateShip = true;
+                case NPCID.DD2DarkMageT3:
+                    {
+                        CompletionModWorld.downedDarkMage = false;
+                        CompletionModWorld.downedDarkMageHard = true;
+                    }
                     break;
                 case NPCID.DD2Betsy:
                     CompletionModWorld.downedBetsy = true;
+                    break;
+                case NPCID.PirateShip:
+                    CompletionModWorld.downedPirateShip = true;
                     break;
             }
         }
