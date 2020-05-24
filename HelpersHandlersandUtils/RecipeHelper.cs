@@ -29,6 +29,8 @@ namespace CompletionMod.HelpersHandlersandUtils
 			addTungsten(mod);
 			addGold(mod);
 			addPlatinum(mod);
+			addDemonite(mod);
+			addCrimtane(mod);
 			addCobalt(mod);
 			addPalladium(mod);
 			addMythril(mod);
@@ -90,6 +92,20 @@ namespace CompletionMod.HelpersHandlersandUtils
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.PlatinumBar);
 			recipe.SetResult(ItemID.GoldBar);
+			recipe.AddRecipe();
+		}
+		public static void addDemonite(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.DemoniteBar);
+			recipe.SetResult(ItemID.CrimtaneBar);
+			recipe.AddRecipe();
+		}
+		public static void addCrimtane(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.CrimtaneBar);
+			recipe.SetResult(ItemID.DemoniteBar);
 			recipe.AddRecipe();
 		}
 		public static void addCobalt(Mod mod)
@@ -199,6 +215,14 @@ namespace CompletionMod.HelpersHandlersandUtils
 				ItemID.PlatinumBar
 			});
 			RecipeGroup.RegisterGroup("CompletionMod:GoldPlatinumBar", group4);
+
+			RecipeGroup group8 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Demonite or Crimtane Bar", new int[]
+{
+				ModContent.ItemType<Placeholders.DemoniteCrimtaneBar>(),
+				ItemID.DemoniteBar,
+				ItemID.CrimtaneBar
+});
+			RecipeGroup.RegisterGroup("CompletionMod:GoldPlatinumBar", group8);
 
 			RecipeGroup group5 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Cobalt or Palladium Bar", new int[]
 			{
@@ -341,6 +365,24 @@ namespace CompletionMod.HelpersHandlersandUtils
 				{
 					RecipeEditor editor = new RecipeEditor(recipe);
 					editor.AcceptRecipeGroup("CompletionMod:GoldPlatinumBar");
+				}
+
+				finder = new RecipeFinder();
+				finder.AddIngredient(ItemID.DemoniteBar);
+
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.AcceptRecipeGroup("CompletionMod:DemoniteCrimtaneBar");
+				}
+
+				finder = new RecipeFinder();
+				finder.AddIngredient(ItemID.CrimtaneBar);
+
+				foreach (Recipe recipe in finder.SearchRecipes())
+				{
+					RecipeEditor editor = new RecipeEditor(recipe);
+					editor.AcceptRecipeGroup("CompletionMod:DemoniteCrimtaneBar");
 				}
 
 				finder = new RecipeFinder();
