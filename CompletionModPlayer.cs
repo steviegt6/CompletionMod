@@ -288,12 +288,16 @@ namespace CompletionMod
 							{
 								if (Main.netMode == NetmodeID.SinglePlayer)
 								{
+#pragma warning disable CS0618 // Type or member is obsolete
 									Main.NewText(Lang.misc[48].Value, 175, 75, 255, false);
+#pragma warning restore CS0618 // Type or member is obsolete
 									return;
 								}
 								if (Main.netMode == NetmodeID.Server)
 								{
+#pragma warning disable CS0618 // Type or member is obsolete
 									NetMessage.BroadcastChatMessage(Lang.misc[48].ToNetworkText(), new Color(175, 75, 255), -1);
+#pragma warning restore CS0618 // Type or member is obsolete
 									return;
 								}
 							}

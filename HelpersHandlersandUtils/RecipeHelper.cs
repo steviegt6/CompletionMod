@@ -13,141 +13,86 @@ namespace CompletionMod.HelpersHandlersandUtils
 			addCnadyCanePickaxe(mod);
 			addCandyCaneSword(mod);
 			addCandyCaneHook(mod);
-			addBars(mod);
 		}
 		public static void addMiscItemRecipes(Mod mod)
 		{
 			addHandWarmerRecipe(mod);
+			addCorruptionCrimsonCounterparts(mod);
+			addBars(mod);
+		}
+		public static void addCorruptionCrimsonCounterparts(Mod mod)
+		{
+			addVariationSwap(mod, ItemID.RottenChunk, ItemID.Vertebrae, 1);
+			addVariationSwap(mod, ItemID.Vertebrae, ItemID.RottenChunk, 1);
+			addVariationSwap(mod, ItemID.ShadowScale, ItemID.TissueSample, 1);
+			addVariationSwap(mod, ItemID.TissueSample, ItemID.ShadowScale, 1);
+			addVariationSwap(mod, ItemID.Musket, ItemID.TheUndertaker, 1);
+			addVariationSwap(mod, ItemID.TheUndertaker, ItemID.Musket, 1);
+			addVariationSwap(mod, ItemID.BandofStarpower, ItemID.PanicNecklace, 1);
+			addVariationSwap(mod, ItemID.PanicNecklace, ItemID.BandofStarpower, 1);
+			addVariationSwap(mod, ItemID.BallOHurt, ItemID.TheRottedFork, 1);
+			addVariationSwap(mod, ItemID.TheRottedFork, ItemID.BallOHurt, 1);
+			addVariationSwap(mod, ItemID.Vilethorn, ItemID.CrimsonRod, 1);
+			addVariationSwap(mod, ItemID.CrimsonRod, ItemID.Vilethorn, 1);
+			addVariationSwap(mod, ItemID.ShadowOrb, ItemID.CrimsonHeart, 1);
+			addVariationSwap(mod, ItemID.CrimsonHeart, ItemID.ShadowOrb, 1);
+			addVariationSwap(mod, ItemID.VileMushroom, ItemID.ViciousMushroom, 1);
+			addVariationSwap(mod, ItemID.ViciousMushroom, ItemID.VileMushroom, 1);
+			addVariationSwap(mod, ItemID.Ebonwood, ItemID.Shadewood, 1);
+			addVariationSwap(mod, ItemID.Shadewood, ItemID.Ebonwood, 1);
+			addVariationSwap(mod, ItemID.EbonstoneBlock, ItemID.CrimstoneBlock, 1);
+			addVariationSwap(mod, ItemID.CrimstoneBlock, ItemID.EbonstoneBlock, 1);
+			addVariationSwap(mod, ItemID.EbonsandBlock, ItemID.CrimsandBlock, 1);
+			addVariationSwap(mod, ItemID.CrimsandBlock, ItemID.EbonsandBlock, 1);
+			addVariationSwap(mod, ItemID.PurpleIceBlock, ItemID.RedIceBlock, 1);
+			addVariationSwap(mod, ItemID.RedIceBlock, ItemID.PurpleIceBlock, 1);
+			addVariationSwap(mod, ItemID.CorruptFishingCrate, ItemID.CrimsonFishingCrate, 1);
+			addVariationSwap(mod, ItemID.CrimsonFishingCrate, ItemID.CorruptFishingCrate, 1);
+			addVariationSwap(mod, ItemID.CrimsonTigerfish, ItemID.Ebonkoi, 1);
+			addVariationSwap(mod, ItemID.Hemopiranha, ItemID.Ebonkoi, 1);
+			addVariationSwap(mod, ItemID.Ebonkoi, ItemID.CrimsonTigerfish, 1);
+			addVariationSwap(mod, ItemID.Ebonkoi, ItemID.Hemopiranha, 1);
+			addVariationSwap(mod, ItemID.CursedFlame, ItemID.Ichor, 1);
+			addVariationSwap(mod, ItemID.Ichor, ItemID.CursedFlame, 1);
+			addVariationSwap(mod, ItemID.DartRifle, ItemID.DartPistol, 1);
+			addVariationSwap(mod, ItemID.DartPistol, ItemID.DartRifle, 1);
+			addVariationSwap(mod, ItemID.WormHook, ItemID.TendonHook, 1);
+			addVariationSwap(mod, ItemID.TendonHook, ItemID.WormHook, 1);
+			addVariationSwap(mod, ItemID.ClingerStaff, ItemID.SoulDrain, 1);
+			addVariationSwap(mod, ItemID.SoulDrain, ItemID.ClingerStaff, 1);
+			addVariationSwap(mod, ItemID.PutridScent, ItemID.FleshKnuckles, 1);
+			addVariationSwap(mod, ItemID.FleshKnuckles, ItemID.PutridScent, 1);
+			addVariationSwap(mod, ItemID.ChainGuillotines, ItemID.FetidBaghnakhs, 1);
+			addVariationSwap(mod, ItemID.FetidBaghnakhs, ItemID.ChainGuillotines, 1);
+			addVariationSwap(mod, ItemID.CorruptionKey, ItemID.CrimsonKey, 1);
+			addVariationSwap(mod, ItemID.CrimsonKey, ItemID.CorruptionKey, 1);
 		}
 		public static void addBars(Mod mod)
 		{
-			addCopper(mod);
-			addTin(mod);
-			addIron(mod);
-			addLead(mod);
-			addSilver(mod);
-			addTungsten(mod);
-			addGold(mod);
-			addPlatinum(mod);
-			addDemonite(mod);
-			addCrimtane(mod);
-			addCobalt(mod);
-			addPalladium(mod);
-			addMythril(mod);
-			addOrichalcum(mod);
-			addAdamantite(mod);
-			addTitanium(mod);
+			addVariationSwap(mod, ItemID.CopperBar, ItemID.TinBar, 1);
+			addVariationSwap(mod, ItemID.TinBar, ItemID.CopperBar, 1);
+			addVariationSwap(mod, ItemID.IronBar, ItemID.LeadBar, 1);
+			addVariationSwap(mod, ItemID.LeadBar, ItemID.IronBar, 1);
+			addVariationSwap(mod, ItemID.SilverBar, ItemID.TungstenBar, 1);
+			addVariationSwap(mod, ItemID.TungstenBar, ItemID.SilverBar, 1);
+			addVariationSwap(mod, ItemID.GoldBar, ItemID.TungstenBar, 1);
+			addVariationSwap(mod, ItemID.TungstenBar, ItemID.GoldBar, 1);
+			addVariationSwap(mod, ItemID.DemoniteBar, ItemID.DemoniteBar, 1);
+			addVariationSwap(mod, ItemID.CrimtaneBar, ItemID.CrimtaneBar, 1);
+			addVariationSwap(mod, ItemID.CobaltBar, ItemID.PalladiumBar, 1);
+			addVariationSwap(mod, ItemID.PalladiumBar, ItemID.CobaltBar, 1);
+			addVariationSwap(mod, ItemID.MythrilBar, ItemID.OrichalcumBar, 1);
+			addVariationSwap(mod, ItemID.OrichalcumBar, ItemID.MythrilBar, 1);
+			addVariationSwap(mod, ItemID.AdamantiteBar, ItemID.TitaniumBar, 1);
+			addVariationSwap(mod, ItemID.TitaniumBar, ItemID.AdamantiteBar, 1);
 		}
-		public static void addCopper(Mod mod)
+		public static void addVariationSwap(Mod mod, short ingredient, short result, int iStack = 1, int rStack = 1, string reqTile = null)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CopperBar);
-			recipe.SetResult(ItemID.TinBar);
-			recipe.AddRecipe();
-		}
-		public static void addTin(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.TinBar);
-			recipe.SetResult(ItemID.CopperBar);
-			recipe.AddRecipe();
-		}
-		public static void addIron(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.IronBar);
-			recipe.SetResult(ItemID.LeadBar);
-			recipe.AddRecipe();
-		}
-		public static void addLead(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.LeadBar);
-			recipe.SetResult(ItemID.IronBar);
-			recipe.AddRecipe();
-		}
-		public static void addSilver(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.SilverBar);
-			recipe.SetResult(ItemID.TungstenBar);
-			recipe.AddRecipe();
-		}
-		public static void addTungsten(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.TungstenBar);
-			recipe.SetResult(ItemID.SilverBar);
-			recipe.AddRecipe();
-		}
-		public static void addGold(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.GoldBar);
-			recipe.SetResult(ItemID.PlatinumBar);
-			recipe.AddRecipe();
-		}
-		public static void addPlatinum(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.PlatinumBar);
-			recipe.SetResult(ItemID.GoldBar);
-			recipe.AddRecipe();
-		}
-		public static void addDemonite(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.DemoniteBar);
-			recipe.SetResult(ItemID.CrimtaneBar);
-			recipe.AddRecipe();
-		}
-		public static void addCrimtane(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CrimtaneBar);
-			recipe.SetResult(ItemID.DemoniteBar);
-			recipe.AddRecipe();
-		}
-		public static void addCobalt(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CobaltBar);
-			recipe.SetResult(ItemID.PalladiumBar);
-			recipe.AddRecipe();
-		}
-		public static void addPalladium(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.PalladiumBar);
-			recipe.SetResult(ItemID.CobaltBar);
-			recipe.AddRecipe();
-		}
-		public static void addMythril(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.MythrilBar);
-			recipe.SetResult(ItemID.OrichalcumBar);
-			recipe.AddRecipe();
-		}
-		public static void addOrichalcum(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.OrichalcumBar);
-			recipe.SetResult(ItemID.MythrilBar);
-			recipe.AddRecipe();
-		}
-		public static void addAdamantite(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.AdamantiteBar);
-			recipe.SetResult(ItemID.TitaniumBar);
-			recipe.AddRecipe();
-		}
-		public static void addTitanium(Mod mod)
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.TitaniumBar);
-			recipe.SetResult(ItemID.AdamantiteBar);
+			recipe.AddIngredient(ingredient, iStack);
+			if (reqTile != null)
+				recipe.AddTile(null, reqTile);
+			recipe.SetResult(result, rStack);
 			recipe.AddRecipe();
 		}
 		public static void addHandWarmerRecipe(Mod mod)
@@ -247,6 +192,13 @@ namespace CompletionMod.HelpersHandlersandUtils
 				ItemID.TitaniumBar
 			});
 			RecipeGroup.RegisterGroup("CompletionMod:AdamantiteTitaniumBar", group7);
+
+			RecipeGroup group9 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Rotten Chunk or Vertebrae", new int[]
+			{
+				ItemID.RottenChunk,
+				ItemID.Vertebrae
+			});
+			RecipeGroup.RegisterGroup("CompletionMod:AdamantiteTitaniumBar", group9);
 		}
 		public static void SummonReplacements(Mod mod)
         {
