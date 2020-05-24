@@ -55,7 +55,7 @@ namespace CompletionMod.NPCs.Town
         }
         public override string GetChat()
         {
-            switch (Main.rand.Next(2))
+            switch (Main.rand.Next(3))
             {
                 case 0:
                     return "...";

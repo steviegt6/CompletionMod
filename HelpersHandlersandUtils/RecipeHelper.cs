@@ -167,7 +167,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 				ItemID.DemoniteBar,
 				ItemID.CrimtaneBar
 });
-			RecipeGroup.RegisterGroup("CompletionMod:GoldPlatinumBar", group8);
+			RecipeGroup.RegisterGroup("CompletionMod:DemoniteCrimtaneBar", group8);
 
 			RecipeGroup group5 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Cobalt or Palladium Bar", new int[]
 			{
@@ -192,13 +192,6 @@ namespace CompletionMod.HelpersHandlersandUtils
 				ItemID.TitaniumBar
 			});
 			RecipeGroup.RegisterGroup("CompletionMod:AdamantiteTitaniumBar", group7);
-
-			RecipeGroup group9 = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Rotten Chunk or Vertebrae", new int[]
-			{
-				ItemID.RottenChunk,
-				ItemID.Vertebrae
-			});
-			RecipeGroup.RegisterGroup("CompletionMod:AdamantiteTitaniumBar", group9);
 		}
 		public static void SummonReplacements(Mod mod)
         {
