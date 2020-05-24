@@ -7,7 +7,49 @@ namespace CompletionMod.HelpersHandlersandUtils
 {
     public static class RecipeHelper
     {
-        public static void SummonReplacements(Mod mod)
+		public static void addCandyCaneRecipes(Mod mod)
+		{
+			addCnadyCanePickaxe(mod);
+			addCandyCaneSword(mod);
+			addCandyCaneHook(mod);
+		}
+		public static void addMiscItemRecipes(Mod mod)
+		{
+			addHandWarmerRecipe(mod);
+		}
+		public static void addHandWarmerRecipe(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Silk, 10);
+			recipe.AddTile(TileID.Loom);
+			recipe.SetResult(ItemID.HandWarmer);
+			recipe.AddRecipe();
+		}
+		public static void addCnadyCanePickaxe(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 35);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CnadyCanePickaxe);
+			recipe.AddRecipe();
+		}
+		public static void addCandyCaneSword(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 50);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CandyCaneSword);
+			recipe.AddRecipe();
+		}
+		public static void addCandyCaneHook(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.CandyCaneBlock, 85);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.CandyCaneHook);
+			recipe.AddRecipe();
+		}
+		public static void SummonReplacements(Mod mod)
         {
 			if (Config.Instance.AutoConvert)
 			{

@@ -160,50 +160,8 @@ namespace CompletionMod
 		}
 		public override void AddRecipes()
 		{
-			addCandyCaneRecipes();
-			addMiscItemRecipes();
-		}
-		public void addCandyCaneRecipes()
-		{
-			addCnadyCanePickaxe();
-			addCandyCaneSword();
-			addCandyCaneHook();
-		}
-		public void addMiscItemRecipes()
-		{
-			addHandWarmerRecipe();
-		}
-		public void addHandWarmerRecipe()
-		{
-			ModRecipe recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.Silk, 10);
-			recipe.AddTile(TileID.Loom);
-			recipe.SetResult(ItemID.HandWarmer);
-			recipe.AddRecipe();
-		}
-		public void addCnadyCanePickaxe()
-		{
-			ModRecipe recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CandyCaneBlock, 35);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.CnadyCanePickaxe);
-			recipe.AddRecipe();
-		}
-		public void addCandyCaneSword()
-		{
-			ModRecipe recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CandyCaneBlock, 50);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.CandyCaneSword);
-			recipe.AddRecipe();
-		}
-		public void addCandyCaneHook()
-		{
-			ModRecipe recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CandyCaneBlock, 85);
-			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(ItemID.CandyCaneHook);
-			recipe.AddRecipe();
+			RecipeHelper.addCandyCaneRecipes(this);
+			RecipeHelper.addMiscItemRecipes(this);
 		}
 		public override void AddRecipeGroups()
 		{
