@@ -26,6 +26,11 @@ namespace CompletionMod
 		[ReloadRequired]
 		[DefaultValue(true)]
 		public bool AutoConvert;
+		[Label("$Mods.CompletionMod.RecipeSwitch")]
+		[Tooltip("Enabling this replaces various items with recipe groups so you can use that item or the item's variant (i.e. use copper and tin bars instead of just copper).")]
+		[ReloadRequired]
+		[DefaultValue(true)]
+		public bool RecipeSwitch;
 
 		[Header("$Mods.CompletionMod.Misc")]
 		[Label("$Mods.CompletionMod.MaxStack")]
