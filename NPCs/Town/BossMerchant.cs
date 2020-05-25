@@ -51,22 +51,16 @@ namespace CompletionMod.NPCs.Town
         }
         public override string TownNPCName()
         {
-            return "Boss Merchant";
+            if (Main.rand.NextBool(100))
+                return "Virgin";
+            else
+                return "Chad";
         }
         public override string GetChat()
         {
             int merchant = NPC.FindFirstNPC(NPCID.Merchant);
             int armsDealer = NPC.FindFirstNPC(NPCID.ArmsDealer);
             int tavernKeep = NPC.FindFirstNPC(NPCID.DD2Bartender);
-            if (merchant >= 0 && Main.rand.NextBool(8))
-                return "Tell that" + Main.npc[merchant].GivenName + " guy that he's got nothing on me.";
-            if (armsDealer >= 0 && Main.rand.NextBool(8))
-                return "Do ya' think " + Main.npc[merchant].GivenName + " is skilled with guns? I'd love to go boss-hunting with him.";
-            if (tavernKeep >= 0 && Main.rand.NextBool(8))
-                return "I heard that " + Main.npc[merchant].GivenName + " is from a different world than us. Mind askin' him if there were any tough enemies back there?";
-            if (Main.hardMode)
-                if (merchant >= 0 && Main.rand.NextBool(8))
-                    return "Wooh! These enemies seem a lot harder! Talk about a thrill!";
             switch (Main.rand.Next(5))
             {
                 case 0:
