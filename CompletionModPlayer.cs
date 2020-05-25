@@ -11,11 +11,11 @@ namespace CompletionMod
 	{
 		public CompletionModPlayer Instance;
 
-		private static int spawnSpaceX = 3;
-		private static int spawnSpaceY = 3;
+		private static readonly int spawnSpaceX = 3;
+		private static readonly int spawnSpaceY = 3;
 
-		private static int spawnRangeX = (int)((double)(NPC.sWidth / 16) * 0.7);
-		private static int spawnRangeY = (int)((double)(NPC.sHeight / 16) * 0.7);
+		private static readonly int spawnRangeX = (int)((double)(NPC.sWidth / 16) * 0.7);
+		private static readonly int spawnRangeY = (int)((double)(NPC.sHeight / 16) * 0.7);
 
 		public static void SpawnCompletionWOF(Vector2 pos)
 		{
@@ -203,7 +203,6 @@ namespace CompletionMod
 										{
 											if (num20 < num15 || num20 > num16 || num22 < num17 || num22 > num18 || n == 999)
 											{
-												ushort arg_67E_0 = Main.tile[num20, num22].type;
 												num9 = num20;
 												num10 = num22;
 												flag = true;

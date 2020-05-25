@@ -69,7 +69,7 @@ namespace CompletionMod.Items.Summons
         {
             if (CompletionModWorld.downedOgre && !CompletionModWorld.downedOgreHard)
                 CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.DD2OgreT2);
-            else if (CompletionModWorld.downedOgreHard && !CompletionModWorld.downedOgre)
+            else if (CompletionModWorld.downedOgreHard && CompletionModWorld.downedOgre)
                 CompletionModPlayer.SpawnOnCompletionPlayer(player.whoAmI, NPCID.DD2OgreT3);
             else
                 NPC.SpawnOnPlayer(player.whoAmI, NPCID.DD2OgreT2);

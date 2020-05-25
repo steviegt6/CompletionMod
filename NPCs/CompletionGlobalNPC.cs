@@ -23,7 +23,8 @@ namespace CompletionMod.NPCs
                     break;
                 case NPCID.DD2OgreT3:
                     {
-                        CompletionModWorld.downedOgre = false;
+                        if (!CompletionModWorld.downedOgre)
+                            CompletionModWorld.downedOgre = true;
                         CompletionModWorld.downedOgreHard = true;
                     }
                     break;

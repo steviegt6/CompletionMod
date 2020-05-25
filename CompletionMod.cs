@@ -50,12 +50,11 @@ namespace CompletionMod
 		public override void PostAddRecipes()
 		{
 			RecipeHelper.SummonReplacements(this);
-			RecipeHelper.SwitchRecipes(this);
+			RecipeHelper.SwitchRecipes(/*this*/);
 		}
 		public override void AddRecipes()
 		{
-			RecipeHelper.addCandyCaneRecipes(this);
-			RecipeHelper.addMiscItemRecipes(this);
+			RecipeHelper.AddCompletionRecipes(this);
 		}
 		public override void AddRecipeGroups()
 		{
