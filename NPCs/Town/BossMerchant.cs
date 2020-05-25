@@ -56,9 +56,18 @@ namespace CompletionMod.NPCs.Town
         public override string GetChat()
         {
             int merchant = NPC.FindFirstNPC(NPCID.Merchant);
-            if (merchant >= 0 && Main.rand.NextBool(4))
+            int armsDealer = NPC.FindFirstNPC(NPCID.ArmsDealer);
+            int tavernKeep = NPC.FindFirstNPC(NPCID.DD2Bartender);
+            if (merchant >= 0 && Main.rand.NextBool(8))
                 return "Tell that" + Main.npc[merchant].GivenName + " guy that he's got nothing on me.";
-            switch (Main.rand.Next(4))
+            if (armsDealer >= 0 && Main.rand.NextBool(8))
+                return "Do ya' think " + Main.npc[merchant].GivenName + " is skilled with guns? I'd love to go boss-hunting with him.";
+            if (tavernKeep >= 0 && Main.rand.NextBool(8))
+                return "I heard that " + Main.npc[merchant].GivenName + " is from a different world than us. Mind askin' him if there were any tough enemies back there?";
+            if (Main.hardMode)
+                if (merchant >= 0 && Main.rand.NextBool(8))
+                    return "Wooh! These enemies seem a lot harder! Talk about a thrill!";
+            switch (Main.rand.Next(5))
             {
                 case 0:
                     return "...";
@@ -68,8 +77,36 @@ namespace CompletionMod.NPCs.Town
                     return "I really hate slimes.";
                 case 3:
                     return "Don't expect me to give you a discount just because you saved me once.";
+                case 4:
+                    return "Huh? Yeah, of course I hunt bosses for both the honor and the loot.";
+                case 5:
+                    switch (Main.rand.Next(5))
+                    {
+                        case 0:
+                            if (merchant >= 0)
+                                return "Tell that " + Main.npc[merchant].GivenName + " guy that he's got nothing on me.";
+                            else
+                                return "Yeah, my name is my profession. So what?";
+                        case 1:
+                            if (armsDealer >= 0)
+                                return "Do ya' think " + Main.npc[armsDealer].GivenName + " is skilled with guns? I'd love to go boss-hunting with him.";
+                            else
+                                return "I really hate slimes.";
+                        case 2:
+                            if (tavernKeep >= 0)
+                                return "I heard that " + Main.npc[tavernKeep].GivenName + " is from a different world than us. Mind askin' him if there were any tough enemies back there?";
+                            else
+                                return "Don't expect me to give you a discount just because you saved me once.";
+                        case 3:
+                            if (Main.hardMode)
+                                return "Wooh! These enemies seem a lot harder! Talk about a thrill!";
+                            else
+                                return "Huh? Yeah, of course I hunt bosses for both the honor and the loot.";
+                        default:
+                            return "...";
+                    }
                 default:
-                    return "...";
+                    return "Huh?";
             }
         }
         public override void SetChatButtons(ref string button, ref string button2)
