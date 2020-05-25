@@ -33,6 +33,10 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddIceSickle(mod);
 			AddFrostbrand(mod);
 			AddBeamSword(mod);
+			AddRally(mod);
+			AddCascade(mod);
+			AddYelets(mod);
+			AddHelFire(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -139,6 +143,41 @@ namespace CompletionMod.HelpersHandlersandUtils
 			if (reqTile != null)
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
+			recipe.AddRecipe();
+		}
+		public static void AddHelFire(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:CobaltPalladium", 8);
+			recipe.AddIngredient(ItemID.Cascade);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.HelFire);
+			recipe.AddRecipe();
+		}
+		public static void AddYelets(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:AdamantiteTitaniumBar", 8);
+			recipe.AddIngredient(ItemID.JungleYoyo);
+			recipe.AddIngredient(ItemID.SoulofMight, 5);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.Yelets);
+			recipe.AddRecipe();
+		}
+		public static void AddCascade(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.HellstoneBar, 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.Cascade);
+			recipe.AddRecipe();
+		}
+		public static void AddRally(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:IronleadBar", 14);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.Rally);
 			recipe.AddRecipe();
 		}
 		public static void AddBeamSword(Mod mod)
