@@ -55,14 +55,19 @@ namespace CompletionMod.NPCs.Town
         }
         public override string GetChat()
         {
-            switch (Main.rand.Next(3))
+            int merchant = NPC.FindFirstNPC(NPCID.Merchant);
+            if (merchant >= 0 && Main.rand.NextBool(4))
+                return "Tell that" + Main.npc[merchant].GivenName + " guy that he's got nothing on me.";
+            switch (Main.rand.Next(4))
             {
                 case 0:
                     return "...";
                 case 1:
                     return "Yeah, my name is my profession. So what?";
                 case 2:
-                    return "I need a sprite, I know.";
+                    return "I really hate slimes.";
+                case 3:
+                    return "Don't expect me to give you a discount just because you saved me once.";
                 default:
                     return "...";
             }

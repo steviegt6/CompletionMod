@@ -148,7 +148,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 		public static void AddHelFire(Mod mod)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("CompletionMod:CobaltPalladium", 8);
+			recipe.AddRecipeGroup("CompletionMod:CobaltPalladiumBar", 8);
 			recipe.AddIngredient(ItemID.Cascade);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(ItemID.HelFire);
@@ -175,7 +175,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 		public static void AddRally(Mod mod)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddRecipeGroup("CompletionMod:IronleadBar", 14);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 14);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(ItemID.Rally);
 			recipe.AddRecipe();

@@ -160,7 +160,6 @@ namespace CompletionMod.NPCs
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.ShipInABottle);
                     nextSlot++;
-                    nextSlot++;
                     if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.FinWings);
