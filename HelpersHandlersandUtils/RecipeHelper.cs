@@ -52,69 +52,39 @@ namespace CompletionMod.HelpersHandlersandUtils
 		}
 		public static void AddCorruptionCrimsonCounterparts(Mod mod)
 		{
-			AddVariationSwap(mod, ItemID.RottenChunk, ItemID.Vertebrae, 1);
-			AddVariationSwap(mod, ItemID.Vertebrae, ItemID.RottenChunk, 1);
-			AddVariationSwap(mod, ItemID.ShadowScale, ItemID.TissueSample, 1);
-			AddVariationSwap(mod, ItemID.TissueSample, ItemID.ShadowScale, 1);
-			AddVariationSwap(mod, ItemID.Musket, ItemID.TheUndertaker, 1);
-			AddVariationSwap(mod, ItemID.TheUndertaker, ItemID.Musket, 1);
-			AddVariationSwap(mod, ItemID.BandofStarpower, ItemID.PanicNecklace, 1);
-			AddVariationSwap(mod, ItemID.PanicNecklace, ItemID.BandofStarpower, 1);
-			AddVariationSwap(mod, ItemID.BallOHurt, ItemID.TheRottedFork, 1);
-			AddVariationSwap(mod, ItemID.TheRottedFork, ItemID.BallOHurt, 1);
-			AddVariationSwap(mod, ItemID.Vilethorn, ItemID.CrimsonRod, 1);
-			AddVariationSwap(mod, ItemID.CrimsonRod, ItemID.Vilethorn, 1);
-			AddVariationSwap(mod, ItemID.ShadowOrb, ItemID.CrimsonHeart, 1);
-			AddVariationSwap(mod, ItemID.CrimsonHeart, ItemID.ShadowOrb, 1);
-			AddVariationSwap(mod, ItemID.VileMushroom, ItemID.ViciousMushroom, 1);
-			AddVariationSwap(mod, ItemID.ViciousMushroom, ItemID.VileMushroom, 1);
-			AddVariationSwap(mod, ItemID.Ebonwood, ItemID.Shadewood, 1);
-			AddVariationSwap(mod, ItemID.Shadewood, ItemID.Ebonwood, 1);
-			AddVariationSwap(mod, ItemID.EbonstoneBlock, ItemID.CrimstoneBlock, 1);
-			AddVariationSwap(mod, ItemID.CrimstoneBlock, ItemID.EbonstoneBlock, 1);
-			AddVariationSwap(mod, ItemID.EbonsandBlock, ItemID.CrimsandBlock, 1);
-			AddVariationSwap(mod, ItemID.CrimsandBlock, ItemID.EbonsandBlock, 1);
-			AddVariationSwap(mod, ItemID.PurpleIceBlock, ItemID.RedIceBlock, 1);
-			AddVariationSwap(mod, ItemID.RedIceBlock, ItemID.PurpleIceBlock, 1);
-			AddVariationSwap(mod, ItemID.CorruptFishingCrate, ItemID.CrimsonFishingCrate, 1);
-			AddVariationSwap(mod, ItemID.CrimsonFishingCrate, ItemID.CorruptFishingCrate, 1);
-			AddVariationSwap(mod, ItemID.CrimsonTigerfish, ItemID.Ebonkoi, 1);
-			AddVariationSwap(mod, ItemID.Hemopiranha, ItemID.Ebonkoi, 1);
-			AddVariationSwap(mod, ItemID.Ebonkoi, ItemID.CrimsonTigerfish, 1);
-			AddVariationSwap(mod, ItemID.Ebonkoi, ItemID.Hemopiranha, 1);
-			AddVariationSwap(mod, ItemID.CursedFlame, ItemID.Ichor, 1);
-			AddVariationSwap(mod, ItemID.Ichor, ItemID.CursedFlame, 1);
-			AddVariationSwap(mod, ItemID.DartRifle, ItemID.DartPistol, 1);
-			AddVariationSwap(mod, ItemID.DartPistol, ItemID.DartRifle, 1);
-			AddVariationSwap(mod, ItemID.WormHook, ItemID.TendonHook, 1);
-			AddVariationSwap(mod, ItemID.TendonHook, ItemID.WormHook, 1);
-			AddVariationSwap(mod, ItemID.ClingerStaff, ItemID.SoulDrain, 1);
-			AddVariationSwap(mod, ItemID.SoulDrain, ItemID.ClingerStaff, 1);
-			AddVariationSwap(mod, ItemID.PutridScent, ItemID.FleshKnuckles, 1);
-			AddVariationSwap(mod, ItemID.FleshKnuckles, ItemID.PutridScent, 1);
-			AddVariationSwap(mod, ItemID.ChainGuillotines, ItemID.FetidBaghnakhs, 1);
-			AddVariationSwap(mod, ItemID.FetidBaghnakhs, ItemID.ChainGuillotines, 1);
-			AddVariationSwap(mod, ItemID.CorruptionKey, ItemID.CrimsonKey, 1);
-			AddVariationSwap(mod, ItemID.CrimsonKey, ItemID.CorruptionKey, 1);
+			AddVariationSwap(mod, ItemID.RottenChunk, ItemID.Vertebrae, true);
+			AddVariationSwap(mod, ItemID.ShadowScale, ItemID.TissueSample, true);
+			AddVariationSwap(mod, ItemID.Musket, ItemID.TheUndertaker, true);
+			AddVariationSwap(mod, ItemID.BandofStarpower, ItemID.PanicNecklace, true);
+			AddVariationSwap(mod, ItemID.BallOHurt, ItemID.TheRottedFork, true);
+			AddVariationSwap(mod, ItemID.Vilethorn, ItemID.CrimsonRod, true);
+			AddVariationSwap(mod, ItemID.ShadowOrb, ItemID.CrimsonHeart, true);
+			AddVariationSwap(mod, ItemID.VileMushroom, ItemID.ViciousMushroom, true);
+			AddVariationSwap(mod, ItemID.Ebonwood, ItemID.Shadewood, true);
+			AddVariationSwap(mod, ItemID.EbonstoneBlock, ItemID.CrimstoneBlock, true);
+			AddVariationSwap(mod, ItemID.EbonsandBlock, ItemID.CrimsandBlock, true);
+			AddVariationSwap(mod, ItemID.PurpleIceBlock, ItemID.RedIceBlock, true);
+			AddVariationSwap(mod, ItemID.CorruptFishingCrate, ItemID.CrimsonFishingCrate, true);
+			AddVariationSwap(mod, ItemID.CrimsonTigerfish, ItemID.Ebonkoi, true);
+			AddVariationSwap(mod, ItemID.Hemopiranha, ItemID.Ebonkoi, true);
+			AddVariationSwap(mod, ItemID.CursedFlame, ItemID.Ichor, true);
+			AddVariationSwap(mod, ItemID.DartRifle, ItemID.DartPistol, true);
+			AddVariationSwap(mod, ItemID.WormHook, ItemID.TendonHook, true);
+			AddVariationSwap(mod, ItemID.ClingerStaff, ItemID.SoulDrain, true);
+			AddVariationSwap(mod, ItemID.PutridScent, ItemID.FleshKnuckles, true);
+			AddVariationSwap(mod, ItemID.ChainGuillotines, ItemID.FetidBaghnakhs, true);
+			AddVariationSwap(mod, ItemID.CorruptionKey, ItemID.CrimsonKey, true);
 		}
 		public static void AddBars(Mod mod)
 		{
-			AddVariationSwap(mod, ItemID.CopperBar, ItemID.TinBar, 1);
-			AddVariationSwap(mod, ItemID.TinBar, ItemID.CopperBar, 1);
-			AddVariationSwap(mod, ItemID.IronBar, ItemID.LeadBar, 1);
-			AddVariationSwap(mod, ItemID.LeadBar, ItemID.IronBar, 1);
-			AddVariationSwap(mod, ItemID.SilverBar, ItemID.TungstenBar, 1);
-			AddVariationSwap(mod, ItemID.TungstenBar, ItemID.SilverBar, 1);
-			AddVariationSwap(mod, ItemID.GoldBar, ItemID.TungstenBar, 1);
-			AddVariationSwap(mod, ItemID.TungstenBar, ItemID.GoldBar, 1);
-			AddVariationSwap(mod, ItemID.DemoniteBar, ItemID.DemoniteBar, 1);
-			AddVariationSwap(mod, ItemID.CrimtaneBar, ItemID.CrimtaneBar, 1);
-			AddVariationSwap(mod, ItemID.CobaltBar, ItemID.PalladiumBar, 1);
-			AddVariationSwap(mod, ItemID.PalladiumBar, ItemID.CobaltBar, 1);
-			AddVariationSwap(mod, ItemID.MythrilBar, ItemID.OrichalcumBar, 1);
-			AddVariationSwap(mod, ItemID.OrichalcumBar, ItemID.MythrilBar, 1);
-			AddVariationSwap(mod, ItemID.AdamantiteBar, ItemID.TitaniumBar, 1);
-			AddVariationSwap(mod, ItemID.TitaniumBar, ItemID.AdamantiteBar, 1);
+			AddVariationSwap(mod, ItemID.CopperBar, ItemID.TinBar, true);
+			AddVariationSwap(mod, ItemID.IronBar, ItemID.LeadBar, true);
+			AddVariationSwap(mod, ItemID.SilverBar, ItemID.TungstenBar, true);
+			AddVariationSwap(mod, ItemID.GoldBar, ItemID.TungstenBar, true);
+			AddVariationSwap(mod, ItemID.DemoniteBar, ItemID.DemoniteBar, true);
+			AddVariationSwap(mod, ItemID.CobaltBar, ItemID.PalladiumBar, true);
+			AddVariationSwap(mod, ItemID.MythrilBar, ItemID.OrichalcumBar, true);
+			AddVariationSwap(mod, ItemID.AdamantiteBar, ItemID.TitaniumBar, true);
 		}
 		public static void AddDungeonItems(Mod mod)
 		{
@@ -126,7 +96,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddChestSwap(mod, ItemID.GoldenKey, ItemID.LockBox, ItemID.Handgun, 1);
 			AddChestSwap(mod, ItemID.GoldenKey, ItemID.LockBox, ItemID.ShadowKey, 1);
 		}
-		public static void AddVariationSwap(Mod mod, short ingredient, short result, int iStack = 1, int rStack = 1, string reqTile = null)
+		public static void AddVariationSwap(Mod mod, short ingredient, short result, bool addInsertThingHereICantThinkOfAName = false, int iStack = 1, int rStack = 1, string reqTile = null)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ingredient, iStack);
@@ -134,6 +104,16 @@ namespace CompletionMod.HelpersHandlersandUtils
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
 			recipe.AddRecipe();
+
+			if (addInsertThingHereICantThinkOfAName)
+			{
+				ModRecipe recipe2 = new ModRecipe(mod);
+				recipe2.AddIngredient(result, rStack);
+				if (reqTile != null)
+					recipe2.AddTile(null, reqTile);
+				recipe2.SetResult(ingredient, iStack);
+				recipe2.AddRecipe();
+			}
 		}
 		public static void AddChestSwap(Mod mod, short ingredient1, short ingredient2, short result, int iStack1 = 1, int iStack2 = 1, int rStack = 1, string reqTile = null)
 		{
