@@ -37,6 +37,8 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddCascade(mod);
 			AddYelets(mod);
 			AddHelFire(mod);
+			AddSpear(mod);
+			AddTrident(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -96,7 +98,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddChestSwap(mod, ItemID.GoldenKey, ItemID.LockBox, ItemID.Handgun, 1);
 			AddChestSwap(mod, ItemID.GoldenKey, ItemID.LockBox, ItemID.ShadowKey, 1);
 		}
-		public static void AddVariationSwap(Mod mod, short ingredient, short result, bool addInsertThingHereICantThinkOfAName = false, int iStack = 1, int rStack = 1, string reqTile = null)
+		public static void AddVariationSwap(Mod mod, short ingredient, short result, bool mirror = false, int iStack = 1, int rStack = 1, string reqTile = null)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ingredient, iStack);
@@ -105,7 +107,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			recipe.SetResult(result, rStack);
 			recipe.AddRecipe();
 
-			if (addInsertThingHereICantThinkOfAName)
+			if (mirror)
 			{
 				ModRecipe recipe2 = new ModRecipe(mod);
 				recipe2.AddIngredient(result, rStack);
@@ -123,6 +125,23 @@ namespace CompletionMod.HelpersHandlersandUtils
 			if (reqTile != null)
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
+			recipe.AddRecipe();
+		}
+		public static void AddTrident(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:GoldPlatinumBar", 12);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.Trident);
+			recipe.AddRecipe();
+		}
+		public static void AddSpear(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 4);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.Spear);
 			recipe.AddRecipe();
 		}
 		public static void AddHelFire(Mod mod)
