@@ -39,6 +39,11 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddHelFire(mod);
 			AddSpear(mod);
 			AddTrident(mod);
+			AddBoomerang(mod);
+			AddEnchantedBoomerang(mod);
+			AddIceBoomerang(mod);
+			AddChainKnife(mod);
+			AddChainGuillotines(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -125,6 +130,51 @@ namespace CompletionMod.HelpersHandlersandUtils
 			if (reqTile != null)
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
+			recipe.AddRecipe();
+		}
+		public static void AddChainGuillotines(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.ChainKnife);
+			recipe.AddRecipeGroup("CompletionMod:CobaltPalladiumBar", 8);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.ChainGuillotines);
+			recipe.AddRecipe();
+		}
+		public static void AddChainKnife(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Chain, 10);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.ChainKnife);
+			recipe.AddRecipe();
+		}
+		public static void AddIceBoomerang(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.IceBlock, 20);
+			recipe.AddIngredient(ItemID.EnchantedBoomerang);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.IceBoomerang);
+			recipe.AddRecipe();
+		}
+		public static void AddEnchantedBoomerang(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 5);
+			recipe.AddIngredient(ItemID.WoodenBoomerang);
+			recipe.AddIngredient(ItemID.EnchantedSword);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.EnchantedBoomerang);
+			recipe.AddRecipe();
+		}
+		public static void AddBoomerang(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 25);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(ItemID.WoodenBoomerang);
 			recipe.AddRecipe();
 		}
 		public static void AddTrident(Mod mod)
