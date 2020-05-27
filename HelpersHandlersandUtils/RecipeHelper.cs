@@ -44,6 +44,8 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddIceBoomerang(mod);
 			AddChainKnife(mod);
 			AddChainGuillotines(mod);
+			AddMarrow(mod);
+			AddBlowpipe(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -130,6 +132,23 @@ namespace CompletionMod.HelpersHandlersandUtils
 			if (reqTile != null)
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
+			recipe.AddRecipe();
+		}
+		public static void AddBlowpipe(Mod mod)
+		{
+				ModRecipe recipe = new ModRecipe(mod);
+				recipe.AddRecipeGroup(RecipeGroupID.Wood, 20);
+				recipe.AddTile(TileID.WorkBenches);
+				recipe.SetResult(ItemID.Blowpipe);
+				recipe.AddRecipe();
+		}
+		public static void AddMarrow(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Bone, 150);
+			recipe.AddRecipeGroup("CompletionMod:CobaltPalladiumBar", 12);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.Marrow);
 			recipe.AddRecipe();
 		}
 		public static void AddChainGuillotines(Mod mod)

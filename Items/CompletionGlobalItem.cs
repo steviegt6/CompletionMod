@@ -223,23 +223,23 @@ namespace CompletionMod.Items
         {
             return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
+        public override void UpdateInventory(Item item, Player player)
+        {
+            if (Config.Instance.infPotions)
+                if (item.buffTime != 0 && item.stack >= Config.Instance.potionsNeeded)
+                    player.AddBuff(item.buffType, 1);
+        }
         public override void OpenVanillaBag(string context, Player player, int arg)
         {
             //base.OpenVanillaBag(context, player, arg);
             if (context == "present")
             {
                 if (Main.rand.Next(156) == 0)
-                {
                     player.QuickSpawnItem(mod.ItemType("GreenCandyCaneHookItem"));
-                }
                 else if (Main.rand.Next(159) == 0)
-                {
                     player.QuickSpawnItem(mod.ItemType("GreenCnadyCanePickaxe"));
-                }
                 else if (Main.rand.Next(159) == 0)
-                {
                     player.QuickSpawnItem(mod.ItemType("GreenCandyCaneSword"));
-                }
             }
         }
     }

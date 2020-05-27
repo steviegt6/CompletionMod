@@ -22,6 +22,10 @@ namespace CompletionMod
 			AddToggle("AutoConvert", "Auto-Convert Boss Summons", ItemID.SuspiciousLookingEye, "FFFFFF");
 			AddToggle("RecipeSwitch", "Add Extra Recipe Groups", ItemID.SoulofFlight, "42CEE4");
 
+			AddToggle("Potions", "Potion-Specific", ItemID.HealingPotion, "E60A39");
+			AddToggle("PotionsNeeded", "Potion Stack Needed", ItemID.TallyCounter, "89909B");
+			AddToggle("InfPotionsEnabled", "Get Potion Buff when You Have " + Config.Instance.potionsNeeded + "+ Potions", ItemID.RestorationPotion, "F965BD");
+
 			AddToggle("Misc", "Miscellaneous", ItemID.SoulofMight, "4BABFF");
 			AddToggle("MaxStack", "Max Stack Increase", ItemID.TallyCounter, "89909B");
 		}
