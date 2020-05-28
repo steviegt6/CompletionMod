@@ -23,7 +23,7 @@ namespace CompletionMod
 			AddToggle("RecipeSwitch", "Add Extra Recipe Groups", ItemID.SoulofFlight, "42CEE4");
 			AddToggle("PotionsNeeded", "Potion Stack Needed", ItemID.TallyCounter, "89909B");
 			AddToggle("InfPotionsEnabled", "Get Potion Buff when You Have " + Config.Instance.potionsNeeded + "+ Potions", ItemID.RestorationPotion, "F965BD");
-			AddToggle("ThrowingNeeded", "Potion Stack Needed", ItemID.TallyCounter, "89909B");
+			AddToggle("ThrowingNeeded", "Throwing Item Stack Needed", ItemID.TallyCounter, "89909B");
 			AddToggle("InfThrowingEnabled", "Infinite throwing items when you have " + Config.Instance.throwingNeeded + "+ of an Item", ItemID.StarAnise, "CB8F54");
 
 			AddToggle("Misc", "Miscellaneous", ItemID.SoulofMight, "4BABFF");
