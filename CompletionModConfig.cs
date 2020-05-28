@@ -34,8 +34,6 @@ namespace CompletionMod
 		[ReloadRequired]
 		[DefaultValue(true)]
 		public bool RecipeSwitch;
-
-		[Header("$Mods.CompletionMod.Potions")]
 		[Label("$Mods.CompletionMod.InfPotionsEnabled")]
 		[DefaultValue(true)]
 		[ReloadRequired]
@@ -45,6 +43,15 @@ namespace CompletionMod
 		[Range(1, 60)]
 		[ReloadRequired]
 		public int potionsNeeded;
+		[Label("$Mods.CompletionMod.InfThrowingEnabled")]
+		[DefaultValue(true)]
+		[ReloadRequired]
+		public bool infThrowing;
+		[Label("$Mods.CompletionMod.ThrowingNeeded")]
+		[DefaultValue(999)]
+		[Range(999, 3996)]
+		[ReloadRequired]
+		public int throwingNeeded;
 
 		[Header("$Mods.CompletionMod.Misc")]
 		[Label("$Mods.CompletionMod.MaxStack")]

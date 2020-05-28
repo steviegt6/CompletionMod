@@ -229,6 +229,16 @@ namespace CompletionMod.Items
                 if (item.buffTime != 0 && item.stack >= Config.Instance.potionsNeeded)
                     player.AddBuff(item.buffType, 1);
         }
+        public override bool ConsumeItem(Item item, Player player)
+        {
+            if (Config.Instance.infThrowing && item.thrown)
+                if (item.maxStack > 1 && item.stack >= Config.Instance.throwingNeeded)
+                    return false;
+                else
+                    return base.ConsumeItem(item, player);
+            else
+                return base.ConsumeItem(item, player);
+        }
         public override void OpenVanillaBag(string context, Player player, int arg)
         {
             //base.OpenVanillaBag(context, player, arg);
