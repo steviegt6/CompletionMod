@@ -31,6 +31,8 @@ namespace CompletionMod.Items
                     base.SetDefaults(item);
             else
                 base.SetDefaults(item);
+            if (item.ammo != 0 && !Config.Instance.MaxStackEnabled)
+                item.maxStack = 3996;
             switch (item.type)
             {
                 case ItemID.SlimeCrown:
@@ -238,6 +240,16 @@ namespace CompletionMod.Items
                     return base.ConsumeItem(item, player);
             else
                 return base.ConsumeItem(item, player);
+        }
+        public override bool ConsumeAmmo(Item item, Player player)
+        {
+            if (Config.Instance.infAmmo && item.ammo != 0)
+                if (item.maxStack > 1 && item.stack >= Config.Instance.ammoNeeded)
+                    return false;
+                else
+                    return base.ConsumeAmmo(item, player);
+            else
+                return base.ConsumeAmmo(item, player);
         }
         public override void OpenVanillaBag(string context, Player player, int arg)
         {

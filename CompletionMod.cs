@@ -25,6 +25,8 @@ namespace CompletionMod
 			AddToggle("InfPotionsEnabled", "Get Potion Buff when You Have " + Config.Instance.potionsNeeded + "+ Potions", ItemID.RestorationPotion, "FFFFFF");
 			AddToggle("ThrowingNeeded", "Throwing Item Stack Needed", ItemID.TallyCounter, "FFFFFF");
 			AddToggle("InfThrowingEnabled", "Infinite throwing items when you have " + Config.Instance.throwingNeeded + "+ of an Item", ItemID.StarAnise, "FFFFFF");
+			AddToggle("AmmoNeeded", "Ammo Stack Needed", ItemID.TallyCounter, "FFFFFF");
+			AddToggle("InfAmmoEnabled", "Infinite ammo (bullets/arrows, etc.) when you have " + Config.Instance.ammoNeeded + "+ of an Item", ItemID.BoneArrow, "FFFFFF");
 
 			AddToggle("Misc", "Miscellaneous", ItemID.SoulofMight, "4BABFF");
 			AddToggle("MaxStack", "Max Stack Increase", ItemID.TallyCounter, "FFFFFF");
@@ -33,7 +35,6 @@ namespace CompletionMod
 		{
 			Instance = null;
 		}
-
 	// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
 
 	//For modded items

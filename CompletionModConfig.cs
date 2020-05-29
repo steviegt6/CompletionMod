@@ -52,6 +52,15 @@ namespace CompletionMod
 		[Range(999, 3996)]
 		[ReloadRequired]
 		public int throwingNeeded;
+		[Label("$Mods.CompletionMod.InfAmmoEnabled")]
+		[DefaultValue(true)]
+		[ReloadRequired]
+		public bool infAmmo;
+		[Label("$Mods.CompletionMod.AmmoNeeded")]
+		[DefaultValue(3996)]
+		[Range(999, 3996)]
+		[ReloadRequired]
+		public int ammoNeeded;
 
 		[Header("$Mods.CompletionMod.Misc")]
 		[Label("$Mods.CompletionMod.MaxStack")]
