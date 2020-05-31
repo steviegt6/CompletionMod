@@ -142,7 +142,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			recipe.SetResult(result, rStack);
 			recipe.AddRecipe();
 		}
-		public static void AddDualPickaxe(Mod mod)
+		public static void AddDualHook(Mod mod)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.GrapplingHook, 2);
