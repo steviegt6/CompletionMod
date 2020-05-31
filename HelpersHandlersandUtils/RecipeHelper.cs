@@ -53,6 +53,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddSpikyBall(mod);
 			AddBonePickaxe(mod);
 			AddDualHook(mod);
+			AddBoneArrow(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -140,6 +141,14 @@ namespace CompletionMod.HelpersHandlersandUtils
 			if (reqTile != null)
 				recipe.AddTile(null, reqTile);
 			recipe.SetResult(result, rStack);
+			recipe.AddRecipe();
+		}
+		public static void AddBoneArrow(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Bone, 25);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(ItemID.BoneArrow, 100);
 			recipe.AddRecipe();
 		}
 		public static void AddDualHook(Mod mod)
