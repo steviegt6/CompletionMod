@@ -14,6 +14,9 @@ namespace CompletionMod
 	{
 		internal static CompletionMod Instance;
 
+		public static string GithubUserName => "Steviegt6";
+		public static string GithubProjectName => "CompletionMod";
+
 		public override void Load()
 		{
 			Instance = this;
@@ -35,10 +38,10 @@ namespace CompletionMod
 		{
 			Instance = null;
 		}
-	// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
+		// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
 
-	//For modded items
-	public void AddToggle(String toggle, String name, String item, String color)
+		//For modded items
+		public void AddToggle(String toggle, String name, String item, String color)
 		{
 			ModTranslation text = CreateTranslation(toggle);
 			text.SetDefault("[i:" + Instance.ItemType(item) + "][c/" + color + ": " + name + "]");
