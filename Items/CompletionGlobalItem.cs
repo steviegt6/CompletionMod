@@ -238,6 +238,11 @@ namespace CompletionMod.Items
                     return false;
                 else
                     return base.ConsumeItem(item, player);
+            else if (Config.Instance.infPotions && item.buffTime != 0)
+                if (item.stack >= Config.Instance.potionsNeeded)
+                    return false;
+                else
+                    return base.ConsumeItem(item, player);
             else
                 return base.ConsumeItem(item, player);
         }
