@@ -48,6 +48,11 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddBlowpipe(mod);
 			AddFlareGun(mod);
 			AddSlimeStaff(mod);
+			AddShuriken(mod);
+			AddThrowingKnife(mod);
+			AddSpikyBall(mod);
+			AddBonePickaxe(mod);
+			AddDualHook(mod);
 		}
 		public static void AddCandyCaneRecipes(Mod mod)
 		{
@@ -60,6 +65,7 @@ namespace CompletionMod.HelpersHandlersandUtils
 			AddHandWarmerRecipe(mod);
 			AddCorruptionCrimsonCounterparts(mod);
 			AddBars(mod);
+			AddBlackLens(mod);
 		}
 		public static void AddCorruptionCrimsonCounterparts(Mod mod)
 		{
@@ -136,13 +142,63 @@ namespace CompletionMod.HelpersHandlersandUtils
 			recipe.SetResult(result, rStack);
 			recipe.AddRecipe();
 		}
+		public static void AddDualPickaxe(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.GrapplingHook, 2);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.SetResult(ItemID.DualHook);
+			recipe.AddRecipe();
+		}
+		public static void AddBonePickaxe(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Bone, 50);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 8);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.BonePickaxe);
+			recipe.AddRecipe();
+		}
+		public static void AddSpikyBall(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 5);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.SpikyBall, 100);
+			recipe.AddRecipe();
+		}
+		public static void AddThrowingKnife(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup(RecipeGroupID.Wood, 1);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 3);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(ItemID.ThrowingKnife, 50);
+			recipe.AddRecipe();
+		}
+		public static void AddShuriken(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 2);
+			recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(ItemID.Shuriken, 50);
+			recipe.AddRecipe();
+		}
+		public static void AddBlackLens(Mod mod)
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.BlackDye, 1);
+			recipe.AddIngredient(ItemID.Lens, 2);
+			recipe.SetResult(ItemID.BlackLens, 2);
+			recipe.AddRecipe();
+		}
 		public static void AddSlimeStaff(Mod mod)
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddRecipeGroup(RecipeGroupID.Wood, 8);
-			recipe.AddRecipeGroup("CompletionMod:IronLeadBar", 14);
+			recipe.AddIngredient(ItemID.Gel, 20);
 			recipe.AddTile(TileID.WorkBenches);
-			recipe.SetResult(ItemID.Blowpipe);
+			recipe.SetResult(ItemID.SlimeStaff);
 			recipe.AddRecipe();
 		}
 		public static void AddFlareGun(Mod mod)
