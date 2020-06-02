@@ -12,7 +12,7 @@ namespace CompletionMod.Items.Buckets
         {
             base.SetStaticDefaults();
             DisplayName.SetDefault("Bottomless Bucket");
-            Tooltip.SetDefault("Contains an endless amount of ɔiʇ>⊣s l>eɹeʇui");
+            Tooltip.SetDefault("Contains an endless amount of an undefined substance");
         }
         public override void SetDefaults()
         {
