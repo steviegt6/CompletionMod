@@ -5,6 +5,7 @@ using Terraria.Localization;
 using System;
 using Terraria.ModLoader.Config;
 using System.ComponentModel;
+using Microsoft.Xna.Framework;
 
 namespace CompletionMod
 {
@@ -22,12 +23,19 @@ namespace CompletionMod
 
 		[Header("$Mods.CompletionMod.General")]
 		[Label("$Mods.CompletionMod.AutoConvert")]
-		[Tooltip("Enabling this auto-converts summoning items into their 'stackable' counterpart." +
+		[Tooltip("RELOAD THE MOD FOR CHANGES TO TAKE FULL EFFECT" +
+			"\n" +
+			"\nEnabling this auto-converts summoning items into their 'stackable' counterpart." +
 			"\n(Stackable counterparts can be used to summon the same boss multiple times)" +
 			"\nDisabling this allows you to craft summons into their stackable counterpart and vice-versa.")]
-		[ReloadRequired]
+		//[ReloadRequired]
 		[DefaultValue(true)]
 		public bool AutoConvert;
+		[Label("$Mods.CompletionMod.RainbowOutline")]
+		//[ReloadRequired]
+		[Tooltip("Enabling this will give summoning items a rainbow outline when their respective boss/invasion/event has been defeated.")]
+		[DefaultValue(true)]
+		public bool RainbowOutline;
 		[Label("$Mods.CompletionMod.RecipeSwitch")]
 		[Tooltip("Enabling this replaces various items with recipe groups so you can use that item or the item's variant." +
 			"\n(i.e. use copper and tin bars instead of just copper)")]
@@ -36,30 +44,30 @@ namespace CompletionMod
 		public bool RecipeSwitch;
 		[Label("$Mods.CompletionMod.InfPotionsEnabled")]
 		[DefaultValue(true)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool infPotions;
 		[Label("$Mods.CompletionMod.PotionsNeeded")]
 		[DefaultValue(30)]
 		[Range(1, 60)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public int potionsNeeded;
 		[Label("$Mods.CompletionMod.InfThrowingEnabled")]
 		[DefaultValue(true)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool infThrowing;
 		[Label("$Mods.CompletionMod.ThrowingNeeded")]
 		[DefaultValue(999)]
 		[Range(999, 3996)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public int throwingNeeded;
 		[Label("$Mods.CompletionMod.InfAmmoEnabled")]
 		[DefaultValue(true)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public bool infAmmo;
 		[Label("$Mods.CompletionMod.AmmoNeeded")]
 		[DefaultValue(3996)]
 		[Range(999, 3996)]
-		[ReloadRequired]
+		//[ReloadRequired]
 		public int ammoNeeded;
 
 		[Header("$Mods.CompletionMod.Misc")]

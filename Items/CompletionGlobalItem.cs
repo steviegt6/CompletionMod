@@ -57,309 +57,430 @@ namespace CompletionMod.Items
                 case ItemID.CelestialSigil:
                     item.value = 10 * 100 * 100;
                     break;
+                case ItemID.SolarTablet:
+                    item.value = 7 * 100 * 100 + (50 * 100);
+                    break;
+                case ItemID.PumpkinMoonMedallion:
+                case ItemID.NaughtyPresent:
+                    item.value = 10 * 100 * 100;
+                    break;
             }
         }
         public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
-            switch (item.type)
+            if (Config.Instance.RainbowOutline)
             {
-                case ItemID.SlimeCrown:
-                    if (NPC.downedSlimeKing)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/SlimeCrown");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                switch (item.type)
+                {
+                    case ItemID.SlimeCrown:
+                        if (NPC.downedSlimeKing)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/SlimeCrown");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.SuspiciousLookingEye:
-                    if (NPC.downedBoss1)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/SuspiciousLookingEye");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.SuspiciousLookingEye:
+                        if (NPC.downedBoss1)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/SuspiciousLookingEye");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.WormFood:
-                    if (NPC.downedBoss2)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/WormFood");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.WormFood:
+                        if (NPC.downedBoss2)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/WormFood");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.BloodySpine:
-                    if (NPC.downedBoss3)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/BloodySpine");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.BloodySpine:
+                        if (NPC.downedBoss3)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/BloodySpine");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.Abeemination:
-                    if (NPC.downedQueenBee)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/Abeemination");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.Abeemination:
+                        if (NPC.downedQueenBee)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/Abeemination");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalWorm:
-                    if (NPC.downedMechBoss1)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalWorm");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.MechanicalWorm:
+                        if (NPC.downedMechBoss1)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalWorm");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalEye:
-                    if (NPC.downedMechBoss2)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalEye");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.MechanicalEye:
+                        if (NPC.downedMechBoss2)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalEye");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalSkull:
-                    if (NPC.downedMechBoss3)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalSkull");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.MechanicalSkull:
+                        if (NPC.downedMechBoss3)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalSkull");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.LihzahrdPowerCell:
-                    if (NPC.downedGolemBoss)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/LihzahrdPowerCell");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.LihzahrdPowerCell:
+                        if (NPC.downedGolemBoss)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/LihzahrdPowerCell");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.TruffleWorm:
-                    if (NPC.downedFishron)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/TruffleWorm");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.TruffleWorm:
+                        if (NPC.downedFishron)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/TruffleWorm");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.CelestialSigil:
-                    if (NPC.downedMoonlord)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/CelestialSigil");
-
-                        Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
-
-                        for (int i = 0; i < 4; i++)
+                        return true;
+                    case ItemID.CelestialSigil:
+                        if (NPC.downedMoonlord)
                         {
-                            Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            Texture2D texture = mod.GetTexture("Glowmasks/CelestialSigil");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                default:
-                    return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+                        return true;
+                    case ItemID.SolarTablet:
+                        if (CompletionModWorld.downedEclipse)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/SolarTablet");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.PumpkinMoonMedallion:
+                        if (CompletionModWorld.downedPumpkinMoon)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/PumpkinMoonMedallion");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.NaughtyPresent:
+                        if (CompletionModWorld.downedFrostMoon)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/NaughtyPresent");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.GoblinBattleStandard:
+                        if (NPC.downedGoblins)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/GoblinBattleStandard");
+
+                            Vector2 position = item.position - Main.screenPosition + new Vector2(item.width / 2, item.height - texture.Height * 0.5f + 2f);
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPosition = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPosition, null, Main.DiscoColor, rotation, texture.Size() * 0.5f, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    default:
+                        return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
+                }
             }
+            else
+                return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
         }
         public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            switch (item.type)
+            if (Config.Instance.RainbowOutline)
             {
-                case ItemID.SlimeCrown:
-                    if (NPC.downedSlimeKing)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/SlimeCrown");
-
-                        for (int i = 0; i < 4; i++)
+                switch (item.type)
+                {
+                    case ItemID.SlimeCrown:
+                        if (NPC.downedSlimeKing)
                         {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
-                        }
-                    }
-                    return true;
-                case ItemID.SuspiciousLookingEye:
-                    if (NPC.downedBoss1)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/SuspiciousLookingEye");
+                            Texture2D texture = mod.GetTexture("Glowmasks/SlimeCrown");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.WormFood:
-                    if (NPC.downedBoss2)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/WormFood");
+                        return true;
+                    case ItemID.SuspiciousLookingEye:
+                        if (NPC.downedBoss1)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/SuspiciousLookingEye");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.BloodySpine:
-                    if (NPC.downedBoss3)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/BloodySpine");
+                        return true;
+                    case ItemID.WormFood:
+                        if (NPC.downedBoss2)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/WormFood");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.Abeemination:
-                    if (NPC.downedQueenBee)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/Abeemination");
+                        return true;
+                    case ItemID.BloodySpine:
+                        if (NPC.downedBoss3)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/BloodySpine");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalWorm:
-                    if (NPC.downedMechBoss1)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalWorm");
+                        return true;
+                    case ItemID.Abeemination:
+                        if (NPC.downedQueenBee)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/Abeemination");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalEye:
-                    if (NPC.downedMechBoss2)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalEye");
+                        return true;
+                    case ItemID.MechanicalWorm:
+                        if (NPC.downedMechBoss1)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalWorm");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.MechanicalSkull:
-                    if (NPC.downedMechBoss3)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/MechanicalSkull");
+                        return true;
+                    case ItemID.MechanicalEye:
+                        if (NPC.downedMechBoss2)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalEye");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.LihzahrdPowerCell:
-                    if (NPC.downedGolemBoss)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/LihzahrdPowerCell");
+                        return true;
+                    case ItemID.MechanicalSkull:
+                        if (NPC.downedMechBoss3)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/MechanicalSkull");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.TruffleWorm:
-                    if (NPC.downedFishron)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/TruffleWorm");
+                        return true;
+                    case ItemID.LihzahrdPowerCell:
+                        if (NPC.downedGolemBoss)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/LihzahrdPowerCell");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                case ItemID.CelestialSigil:
-                    if (NPC.downedMoonlord)
-                    {
-                        Texture2D texture = mod.GetTexture("Glowmasks/CelestialSigil");
+                        return true;
+                    case ItemID.TruffleWorm:
+                        if (NPC.downedFishron)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/TruffleWorm");
 
-                        for (int i = 0; i < 4; i++)
-                        {
-                            Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
-                            spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
                         }
-                    }
-                    return true;
-                default:
-                    return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+                        return true;
+                    case ItemID.CelestialSigil:
+                        if (NPC.downedMoonlord)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/CelestialSigil");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.SolarTablet:
+                        if (CompletionModWorld.downedEclipse)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/SolarTablet");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.PumpkinMoonMedallion:
+                        if (CompletionModWorld.downedPumpkinMoon)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/PumpkinMoonMedallion");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.NaughtyPresent:
+                        if (CompletionModWorld.downedFrostMoon)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/NaughtyPresent");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    case ItemID.GoblinBattleStandard:
+                        if (NPC.downedGoblins)
+                        {
+                            Texture2D texture = mod.GetTexture("Glowmasks/GoblinBattleStandard");
+
+                            for (int i = 0; i < 4; i++)
+                            {
+                                Vector2 offsetPositon = Vector2.UnitY.RotatedBy(MathHelper.PiOver2 * i) * 2;
+                                spriteBatch.Draw(texture, position + offsetPositon, null, Main.DiscoColor, 0, origin, scale, SpriteEffects.None, 0f);
+                            }
+                        }
+                        return true;
+                    default:
+                        return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
+                }
             }
+            else
+                return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
         public override void UpdateInventory(Item item, Player player)
         {

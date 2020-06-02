@@ -21,18 +21,19 @@ namespace CompletionMod
 		{
 			Instance = this;
 
-			AddToggle("General", "General", ItemID.Acorn, "6B5D37");
-			AddToggle("AutoConvert", "Auto-Convert Boss Summons", ItemID.SuspiciousLookingEye, "FFFFFF");
-			AddToggle("RecipeSwitch", "Add Extra Recipe Groups", ItemID.SoulofFlight, "FFFFFF");
-			AddToggle("PotionsNeeded", "Potion Stack Needed", ItemID.TallyCounter, "FFFFFF");
-			AddToggle("InfPotionsEnabled", "Get Potion Buff when You Have " + Config.Instance.potionsNeeded + "+ Potions", ItemID.RestorationPotion, "FFFFFF");
-			AddToggle("ThrowingNeeded", "Throwing Item Stack Needed", ItemID.TallyCounter, "FFFFFF");
-			AddToggle("InfThrowingEnabled", "Infinite throwing items when you have " + Config.Instance.throwingNeeded + "+ of an Item", ItemID.StarAnise, "FFFFFF");
-			AddToggle("AmmoNeeded", "Ammo Stack Needed", ItemID.TallyCounter, "FFFFFF");
-			AddToggle("InfAmmoEnabled", "Infinite ammo (bullets/arrows, etc.) when you have " + Config.Instance.ammoNeeded + "+ of an Item", ItemID.BoneArrow, "FFFFFF");
+			AddToggle("General", "General", ItemID.WireKite, "2694CD"); //very funny hahah terraria devs funny name SHUT UP
+			AddToggle("AutoConvert", "Auto-Convert Boss Summons", ItemID.SuspiciousLookingEye);
+			AddToggle("RainbowOutline", "Add a Rainbow Outline to Summoning Items", ItemID.CelestialSigil);
+			AddToggle("RecipeSwitch", "Add Extra Recipe Groups", ItemID.SoulofFlight);
+			AddToggle("PotionsNeeded", "Potion Stack Needed", ItemID.TallyCounter);
+			AddToggle("InfPotionsEnabled", "Get Potion Buff when You Have " + Config.Instance.potionsNeeded + "+ Potions", ItemID.RestorationPotion);
+			AddToggle("ThrowingNeeded", "Throwing Item Stack Needed", ItemID.TallyCounter);
+			AddToggle("InfThrowingEnabled", "Infinite throwing items when you have " + Config.Instance.throwingNeeded + "+ of an Item", ItemID.StarAnise);
+			AddToggle("AmmoNeeded", "Ammo Stack Needed", ItemID.TallyCounter);
+			AddToggle("InfAmmoEnabled", "Infinite ammo (bullets/arrows, etc.) when you have " + Config.Instance.ammoNeeded + "+ of an Item", ItemID.BoneArrow);
 
 			AddToggle("Misc", "Miscellaneous", ItemID.SoulofMight, "4BABFF");
-			AddToggle("MaxStack", "Max Stack Increase", ItemID.TallyCounter, "FFFFFF");
+			AddToggle("MaxStack", "Max Stack Increase", ItemID.TallyCounter);
 		}
 		public override void Unload()
 		{
@@ -41,7 +42,7 @@ namespace CompletionMod
 		// -- AddToggle Code taken from Fargo's Soul Mod (FargowiltasSouls)! All credit goes to Fargo & other contributors!
 
 		//For modded items
-		public void AddToggle(String toggle, String name, String item, String color)
+		public void AddToggle(string toggle, string name, string item, string color = "FFFFFF")
 		{
 			ModTranslation text = CreateTranslation(toggle);
 			text.SetDefault("[i:" + Instance.ItemType(item) + "][c/" + color + ": " + name + "]");
@@ -49,7 +50,7 @@ namespace CompletionMod
 		}
 
 		//For Vanilla items
-		public void AddToggle(String toggle, String name, int item, String color)
+		public void AddToggle(string toggle, string name, int item, string color = "FFFFFF")
 		{
 			ModTranslation text = CreateTranslation(toggle);
 			text.SetDefault("[i:" + item + "][c/" + color + ": " + name + "]");
