@@ -15,6 +15,7 @@ namespace CompletionMod.Items.CandyCane
             DisplayName.SetDefault("Green Candy Cane Hook");
             //Tooltip.SetDefault("");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -34,6 +35,7 @@ namespace CompletionMod.Items.CandyCane
             item.shootSpeed = 11.5f;
             item.shoot = ProjectileType<GreenCandyCaneHookProjectile>();
         }
+
         public override void AddRecipes()
         {
             base.AddRecipes();
@@ -44,6 +46,7 @@ namespace CompletionMod.Items.CandyCane
             recipe.AddRecipe();
         }
     }
+
     internal class GreenCandyCaneHookProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
@@ -51,6 +54,7 @@ namespace CompletionMod.Items.CandyCane
             base.SetStaticDefaults();
             DisplayName.SetDefault("Green Candy Cane Hook");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -64,6 +68,7 @@ namespace CompletionMod.Items.CandyCane
             projectile.timeLeft *= 10;
             //projectile.CloneDefaults(ProjectileID.CandyCaneHook);
         }
+
         public override bool? CanUseGrapple(Player player)
         {
             int hooksOut = 0;
@@ -81,26 +86,31 @@ namespace CompletionMod.Items.CandyCane
             return true;
             //return base.CanUseGrapple(player);
         }
+
         public override float GrappleRange()
         {
             return 400f; //GrappleRange float = int*16 (amount of tiles multiplied by 16), I think...
             //return base.GrappleRange();
         }
+
         public override void NumGrappleHooks(Player player, ref int numHooks)
         {
             base.NumGrappleHooks(player, ref numHooks);
             numHooks = 1;
         }
+
         public override void GrappleRetreatSpeed(Player player, ref float speed)
         {
             speed = 11f;
             base.GrappleRetreatSpeed(player, ref speed);
         }
+
         public override void GrapplePullSpeed(Player player, ref float speed)
         {
             speed = 11f;
             base.GrapplePullSpeed(player, ref speed);
         }
+
         public override bool PreDraw(SpriteBatch spriteBatch, Color lightColor)
         {
             Vector2 playerCenter = Main.player[projectile.owner].MountedCenter;

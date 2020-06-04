@@ -1,7 +1,6 @@
 ﻿using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
+using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Buckets
 {
@@ -13,6 +12,7 @@ namespace CompletionMod.Items.Buckets
             DisplayName.SetDefault("Bottomless Honey Bucket");
             Tooltip.SetDefault("Contains an endless amount of honey");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -21,11 +21,12 @@ namespace CompletionMod.Items.Buckets
             item.height = 28;
             item.value = Item.sellPrice(0, 10, 0, 0);
         }
+
         public override bool UseItem(Player player)
         {
             return MoreBottomlessBuckets.UseBucket(player, MoreBottomlessBuckets.LiquidTypes.Honey, 2);
         }
-       
+
         public override void AddRecipes()
         {
             base.AddRecipes();

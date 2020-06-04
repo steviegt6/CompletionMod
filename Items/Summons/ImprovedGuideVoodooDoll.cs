@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -10,6 +9,7 @@ namespace CompletionMod.Items.Summons
     public class ImprovedGuideVoodooDoll : ModItem
     {
         public override string Texture => "Terraria/Item_267";
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Guide Voodoo Doll");
@@ -67,6 +67,7 @@ namespace CompletionMod.Items.Summons
             else
                 return false;
         }
+
         public override bool UseItem(Player player)
         {
             CompletionModPlayer.SpawnCompletionWOF(player.position);

@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CompletionMod.Items.CandyCane
@@ -13,6 +12,7 @@ namespace CompletionMod.Items.CandyCane
             DisplayName.SetDefault("Green Candy Cane Pickaxe");
             Tooltip.SetDefault("Can mine Meteorite");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -20,6 +20,7 @@ namespace CompletionMod.Items.CandyCane
             item.pick = 60;
             item.useTime = 20;
         }
+
         public override void AddRecipes()
         {
             base.AddRecipes();

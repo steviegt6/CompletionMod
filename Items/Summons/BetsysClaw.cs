@@ -1,14 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Summons
 {
     public class BetsysClaw : ModItem
-    { 
+    {
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Betsy's Claw");
@@ -65,6 +64,7 @@ namespace CompletionMod.Items.Summons
             else
                 return false;
         }
+
         public override bool UseItem(Player player)
         {
             if (CompletionModWorld.downedBetsy)

@@ -1,7 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 
 namespace CompletionMod.NPCs.Town
 {
@@ -13,6 +12,7 @@ namespace CompletionMod.NPCs.Town
         public static bool shop3;
 
         public static int shopType = 1;
+
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
@@ -26,6 +26,7 @@ namespace CompletionMod.NPCs.Town
             NPCID.Sets.AttackAverageChance[npc.type] = 30;
             NPCID.Sets.HatOffsetY[npc.type] = 4;
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -42,6 +43,7 @@ namespace CompletionMod.NPCs.Town
             npc.knockBackResist = 0.5f;
             animationType = NPCID.Guide;
         }
+
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
             if (NPC.downedSlimeKing)
@@ -49,6 +51,7 @@ namespace CompletionMod.NPCs.Town
             else
                 return false;
         }
+
         public override string TownNPCName()
         {
             if (Main.rand.NextBool(100))
@@ -56,6 +59,7 @@ namespace CompletionMod.NPCs.Town
             else
                 return "Chad";
         }
+
         public override string GetChat()
         {
             int merchant = NPC.FindFirstNPC(NPCID.Merchant);
@@ -65,14 +69,19 @@ namespace CompletionMod.NPCs.Town
             {
                 case 0:
                     return "...";
+
                 case 1:
                     return "Yeah, my name is my profession. So what?";
+
                 case 2:
                     return "I really hate slimes.";
+
                 case 3:
                     return "Don't expect me to give you a discount just because you saved me once.";
+
                 case 4:
                     return "Huh? Yeah, of course I hunt bosses for both the honor and the loot.";
+
                 case 5:
                     switch (Main.rand.Next(5))
                     {
@@ -81,21 +90,25 @@ namespace CompletionMod.NPCs.Town
                                 return "Tell that " + Main.npc[merchant].GivenName + " guy that he's got nothing on me.";
                             else
                                 return "Yeah, my name is my profession. So what?";
+
                         case 1:
                             if (armsDealer >= 0)
                                 return "Do ya' think " + Main.npc[armsDealer].GivenName + " is skilled with guns? I'd love to go boss-hunting with him.";
                             else
                                 return "I really hate slimes.";
+
                         case 2:
                             if (tavernKeep >= 0)
                                 return "I heard that " + Main.npc[tavernKeep].GivenName + " is from a different world than us. Mind askin' him if there were any tough enemies back there?";
                             else
                                 return "Don't expect me to give you a discount just because you saved me once.";
+
                         case 3:
                             if (Main.hardMode)
                                 return "Wooh! These enemies seem a lot harder! Talk about a thrill!";
                             else
                                 return "Huh? Yeah, of course I hunt bosses for both the honor and the loot.";
+
                         default:
                             return "...";
                     }
@@ -103,6 +116,7 @@ namespace CompletionMod.NPCs.Town
                     return "Huh?";
             }
         }
+
         public override void SetChatButtons(ref string button, ref string button2)
         {
             base.SetChatButtons(ref button, ref button2);
@@ -111,9 +125,11 @@ namespace CompletionMod.NPCs.Town
                 case 1:
                     button = "Vanilla Summoning Items";
                     break;
+
                 case 2:
                     button = "Vanilla Pre-Hardmode Boss Loot 1";
                     break;
+
                 case 3:
                     button = "Vanilla Pre-Hardmode Boss Loot 2";
                     break;
@@ -122,6 +138,7 @@ namespace CompletionMod.NPCs.Town
                 shopType = 1;
             button2 = "Switch Shops";
         }
+
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
         {
             base.OnChatButtonClicked(firstButton, ref shop);
@@ -143,11 +160,13 @@ namespace CompletionMod.NPCs.Town
                         shop2 = false;
                         shop3 = false;
                         break;
+
                     case 2:
                         shop1 = false;
                         shop2 = true;
                         shop3 = false;
                         break;
+
                     case 3:
                         shop1 = false;
                         shop2 = false;
@@ -160,6 +179,7 @@ namespace CompletionMod.NPCs.Town
                 shopType++; ;
             }
         }
+
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
             if (shop1)
@@ -296,7 +316,6 @@ namespace CompletionMod.NPCs.Town
                     shop.item[nextSlot].SetDefaults(ItemID.NaughtyPresent);
                     nextSlot++;
                 }
-
             }
             else if (shop2)
             {
@@ -309,20 +328,24 @@ namespace CompletionMod.NPCs.Town
                 nextSlot++;
             }
         }
+
         public override bool CanGoToStatue(bool toKingStatue)
         {
             return true;
         }
+
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             damage = 34;
             knockback = 2f;
         }
+
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
         {
             cooldown = 10;
             randExtraCooldown = 5;
         }
+
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
             projType = ProjectileID.Shuriken;

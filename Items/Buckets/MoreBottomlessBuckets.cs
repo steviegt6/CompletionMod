@@ -1,10 +1,7 @@
-﻿using Terraria;
-using Terraria.ModLoader;
-using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
-using static CompletionMod.Items.Buckets.MoreBottomlessBuckets;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System;
+using Terraria;
+using Terraria.ID;
 
 namespace CompletionMod.Items.Buckets
 {
@@ -16,6 +13,7 @@ namespace CompletionMod.Items.Buckets
             Lava,
             Honey
         }
+
         internal static bool PlaceLiquid(Player player, int x, int y, LiquidTypes liquid)
         {
             if (Main.netMode != NetmodeID.Server)
@@ -42,6 +40,7 @@ namespace CompletionMod.Items.Buckets
             }
             return false;
         }
+
         internal static bool UseBucket(Player player, LiquidTypes liquid, int range) //range code credit goes to mariothedog
         {
             if (player.whoAmI == Main.myPlayer && !player.noBuilding)

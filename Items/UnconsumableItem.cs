@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria.ID;
 
 namespace CompletionMod.Items
 {
@@ -15,14 +7,17 @@ namespace CompletionMod.Items
     {
         /*public Color[] RedBlack => new Color[] { new Color(255, 0, 0), new Color(0, 0, 0) };
         int index = (int)(Main.GameUpdateCount / 60 % 2);*/
+
         public override void SetDefaults()
         {
             item.consumable = false;
         }
+
         public override bool ConsumeItem(Player player)
         {
             return false;
         }
+
         /*public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
             if (downedBoss)

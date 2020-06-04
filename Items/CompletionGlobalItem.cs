@@ -1,20 +1,20 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CompletionMod;
-using static Terraria.ModLoader.ModContent;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
 
 namespace CompletionMod.Items
 {
     public class CompletionGlobalItem : GlobalItem
     {
         public override bool CloneNewInstances => true;
+
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
         }
+
         public override void SetDefaults(Item item)
         {
             if (Config.Instance.MaxStackEnabled)
@@ -38,34 +38,43 @@ namespace CompletionMod.Items
                 case ItemID.SlimeCrown:
                     item.value = 1 * 100 * 100;
                     break;
+
                 case ItemID.SuspiciousLookingEye:
                     item.value = 1 * 100 * 100;
                     break;
+
                 case ItemID.WormFood:
                 case ItemID.BloodySpine:
                     item.value = 2 * 100 * 100 + (50 * 100);
                     break;
+
                 case ItemID.Abeemination:
                     item.value = 5 * 100 * 100 + (50 * 100);
                     break;
+
                 case ItemID.PirateMap:
                     item.value = 10 * 100 * 100;
                     break;
+
                 case ItemID.GoblinBattleStandard:
                     item.value = 1 * 100 * 100;
                     break;
+
                 case ItemID.CelestialSigil:
                     item.value = 10 * 100 * 100;
                     break;
+
                 case ItemID.SolarTablet:
                     item.value = 7 * 100 * 100 + (50 * 100);
                     break;
+
                 case ItemID.PumpkinMoonMedallion:
                 case ItemID.NaughtyPresent:
                     item.value = 10 * 100 * 100;
                     break;
             }
         }
+
         public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
         {
             if (Config.Instance.RainbowOutline)
@@ -86,6 +95,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.SuspiciousLookingEye:
                         if (NPC.downedBoss1)
                         {
@@ -100,6 +110,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.WormFood:
                         if (NPC.downedBoss2)
                         {
@@ -114,6 +125,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.BloodySpine:
                         if (NPC.downedBoss3)
                         {
@@ -128,6 +140,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.Abeemination:
                         if (NPC.downedQueenBee)
                         {
@@ -142,6 +155,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalWorm:
                         if (NPC.downedMechBoss1)
                         {
@@ -156,6 +170,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalEye:
                         if (NPC.downedMechBoss2)
                         {
@@ -170,6 +185,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalSkull:
                         if (NPC.downedMechBoss3)
                         {
@@ -184,6 +200,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.LihzahrdPowerCell:
                         if (NPC.downedGolemBoss)
                         {
@@ -198,6 +215,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.TruffleWorm:
                         if (NPC.downedFishron)
                         {
@@ -212,6 +230,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.CelestialSigil:
                         if (NPC.downedMoonlord)
                         {
@@ -226,6 +245,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.SolarTablet:
                         if (CompletionModWorld.downedEclipse)
                         {
@@ -240,6 +260,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.PumpkinMoonMedallion:
                         if (CompletionModWorld.downedPumpkinMoon)
                         {
@@ -254,6 +275,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.NaughtyPresent:
                         if (CompletionModWorld.downedFrostMoon)
                         {
@@ -268,6 +290,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.GoblinBattleStandard:
                         if (NPC.downedGoblins)
                         {
@@ -282,6 +305,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     default:
                         return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
                 }
@@ -289,6 +313,7 @@ namespace CompletionMod.Items
             else
                 return base.PreDrawInWorld(item, spriteBatch, lightColor, alphaColor, ref rotation, ref scale, whoAmI);
         }
+
         public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
             if (Config.Instance.RainbowOutline)
@@ -307,6 +332,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.SuspiciousLookingEye:
                         if (NPC.downedBoss1)
                         {
@@ -319,6 +345,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.WormFood:
                         if (NPC.downedBoss2)
                         {
@@ -331,6 +358,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.BloodySpine:
                         if (NPC.downedBoss3)
                         {
@@ -343,6 +371,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.Abeemination:
                         if (NPC.downedQueenBee)
                         {
@@ -355,6 +384,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalWorm:
                         if (NPC.downedMechBoss1)
                         {
@@ -367,6 +397,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalEye:
                         if (NPC.downedMechBoss2)
                         {
@@ -379,6 +410,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.MechanicalSkull:
                         if (NPC.downedMechBoss3)
                         {
@@ -391,6 +423,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.LihzahrdPowerCell:
                         if (NPC.downedGolemBoss)
                         {
@@ -403,6 +436,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.TruffleWorm:
                         if (NPC.downedFishron)
                         {
@@ -415,6 +449,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.CelestialSigil:
                         if (NPC.downedMoonlord)
                         {
@@ -427,6 +462,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.SolarTablet:
                         if (CompletionModWorld.downedEclipse)
                         {
@@ -439,6 +475,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.PumpkinMoonMedallion:
                         if (CompletionModWorld.downedPumpkinMoon)
                         {
@@ -451,6 +488,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.NaughtyPresent:
                         if (CompletionModWorld.downedFrostMoon)
                         {
@@ -463,6 +501,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     case ItemID.GoblinBattleStandard:
                         if (NPC.downedGoblins)
                         {
@@ -475,6 +514,7 @@ namespace CompletionMod.Items
                             }
                         }
                         return true;
+
                     default:
                         return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
                 }
@@ -482,12 +522,14 @@ namespace CompletionMod.Items
             else
                 return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
+
         public override void UpdateInventory(Item item, Player player)
         {
             if (Config.Instance.infPotions)
                 if (item.buffTime != 0 && item.stack >= Config.Instance.potionsNeeded)
                     player.AddBuff(item.buffType, 1);
         }
+
         public override bool ConsumeItem(Item item, Player player)
         {
             if (Config.Instance.infThrowing && item.thrown)
@@ -503,6 +545,7 @@ namespace CompletionMod.Items
             else
                 return base.ConsumeItem(item, player);
         }
+
         public override bool ConsumeAmmo(Item item, Player player)
         {
             if (Config.Instance.infAmmo && item.ammo != 0)
@@ -513,6 +556,7 @@ namespace CompletionMod.Items
             else
                 return base.ConsumeAmmo(item, player);
         }
+
         public override void OpenVanillaBag(string context, Player player, int arg)
         {
             if (context == "present")

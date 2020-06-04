@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CompletionMod.Placeholders
@@ -12,12 +11,14 @@ namespace CompletionMod.Placeholders
             DisplayName.SetDefault(" ");
             Tooltip.SetDefault("You... shouldn't have this.");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
             item.CloneDefaults(ItemID.CopperBar);
             item.value = 0;
         }
+
         /*public override void AddRecipes()
         {
             base.AddRecipes();

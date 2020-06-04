@@ -12,17 +12,20 @@ namespace CompletionMod.Items.Ammunition.Other
             DisplayName.SetDefault("Air-Tight Seed Jar");
             Tooltip.SetDefault("For use with the Blowpipe");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
             item.CloneDefaults(ItemID.Seed);
             item.consumable = false;
         }
+
         public override bool ConsumeItem(Player player)
         {
             return false;
             //return base.ConsumeItem(player);
         }
+
         public override void AddRecipes()
         {
             base.AddRecipes();

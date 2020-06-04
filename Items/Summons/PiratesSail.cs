@@ -57,6 +57,7 @@ namespace CompletionMod.Items.Summons
             }
             return true;
         }
+
         public override bool CanUseItem(Player player)
         {
             if (!NPC.AnyNPCs(NPCID.PirateShip) || CompletionModWorld.downedPirateShip)
@@ -66,6 +67,7 @@ namespace CompletionMod.Items.Summons
             else
                 return false;
         }
+
         public override bool UseItem(Player player)
         {
             if (NPC.downedPirates)

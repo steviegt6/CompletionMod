@@ -25,7 +25,7 @@ namespace CompletionMod
         public static bool downedOgreHard;
         public static bool downedMourningWood;
         public static bool downedPumpking;
-        
+
         public static float tick;
 
         public override void Initialize()
@@ -201,6 +201,7 @@ namespace CompletionMod
                                 Item.NewItem((int)player.position.X, (int)player.position.Y, player.width, player.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack, true, 0, true);
                             }
                             break;
+
                         case ItemID.ClothierVoodooDoll:
                             if (Main.mouseItem.type != ItemID.ClothierVoodooDoll)
                             {
@@ -226,6 +227,7 @@ namespace CompletionMod
                                 Item.NewItem((int)item.position.X, (int)item.position.Y, item.width, item.height, mod.ItemType("ImprovedGuideVoodooDoll"), stack);
                             }
                             break;
+
                         case ItemID.ClothierVoodooDoll:
                             if (item.active)
                             {

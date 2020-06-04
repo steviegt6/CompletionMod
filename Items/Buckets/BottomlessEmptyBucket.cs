@@ -1,7 +1,6 @@
 ﻿using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
-using static Terraria.ModLoader.ModContent;
+using Terraria.ModLoader;
 
 namespace CompletionMod.Items.Buckets
 {
@@ -14,6 +13,7 @@ namespace CompletionMod.Items.Buckets
             DisplayName.SetDefault("Bottomless Bucket");
             Tooltip.SetDefault("Contains an endless amount of an undefined substance");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
@@ -22,12 +22,13 @@ namespace CompletionMod.Items.Buckets
             item.defense = 3;
             item.value = Item.sellPrice(0, 10, 0, 0);
         }
+
         public override void UpdateArmorSet(Player player)
         {
             base.UpdateArmorSet(player);
             player.statDefense += 3;
         }
-       
+
         public override void AddRecipes()
         {
             base.AddRecipes();

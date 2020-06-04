@@ -1,11 +1,8 @@
-﻿using Terraria;
+﻿using MonoMod.Cil;
+using System;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using CompletionMod;
-using static Terraria.ModLoader.ModContent;
-using System.Collections.Generic;
-using MonoMod.Cil;
-using System;
 using static Mono.Cecil.Cil.OpCodes;
 
 namespace CompletionMod.NPCs
@@ -21,6 +18,7 @@ namespace CompletionMod.NPCs
                     if (!CompletionModWorld.downedOgreHard)
                         CompletionModWorld.downedOgre = true;
                     break;
+
                 case NPCID.DD2OgreT3:
                     {
                         if (!CompletionModWorld.downedOgre)
@@ -28,35 +26,43 @@ namespace CompletionMod.NPCs
                         CompletionModWorld.downedOgreHard = true;
                     }
                     break;
+
                 case NPCID.DD2DarkMageT1:
                     if (!CompletionModWorld.downedDarkMageHard)
                         CompletionModWorld.downedDarkMage = true;
                     break;
+
                 case NPCID.DD2DarkMageT3:
                     {
                         CompletionModWorld.downedDarkMage = false;
                         CompletionModWorld.downedDarkMageHard = true;
                     }
                     break;
+
                 case NPCID.DD2Betsy:
                     CompletionModWorld.downedBetsy = true;
                     break;
+
                 case NPCID.PirateShip:
                     CompletionModWorld.downedPirateShip = true;
                     break;
+
                 case NPCID.MourningWood:
                     CompletionModWorld.downedMourningWood = true;
                     break;
+
                 case NPCID.Pumpking:
                     CompletionModWorld.downedPumpking = true;
                     break;
             }
         }
+
         public override bool Autoload(ref string name) //IL Editing credit goes to Atenfyr! :D
         {
             IL.Terraria.Main.GUIChatDrawInner += HookAdjustButton;
             return base.Autoload(ref name);
         }
+
         private void HookAdjustButton(ILContext il)
         {
             var c = new ILCursor(il).Goto(0);
@@ -70,6 +76,7 @@ namespace CompletionMod.NPCs
 
             c.Emit(Stloc_S, (byte)10);
         }
+
         public override void OnChatButtonClicked(NPC npc, bool firstButton)
         {
             switch (npc.type)
@@ -86,6 +93,7 @@ namespace CompletionMod.NPCs
                     break;
             }
         }
+
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
             switch (type)

@@ -1,5 +1,4 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace CompletionMod.Items.CandyCane
@@ -12,12 +11,14 @@ namespace CompletionMod.Items.CandyCane
             DisplayName.SetDefault("Green Candy Cane Sword");
             //Tooltip.SetDefault("");
         }
+
         public override void SetDefaults()
         {
             base.SetDefaults();
             item.CloneDefaults(ItemID.CandyCaneSword);
             item.damage = 18;
         }
+
         public override void AddRecipes()
         {
             base.AddRecipes();
