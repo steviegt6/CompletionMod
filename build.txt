@@ -1,11 +1,4 @@
 displayName = [c/FFD700:Completion] [c/ffb84d:Mod]
-author = convicted tomatophile (Steviegt6)
+author = convicted tomatophile (Stevie)
 version = 1.0.0
-homepage = https://discordapp.com/invite/qrZ4Bpz
-Icon = icon.png
-weakReferences = CalamityMod, ThoriumMod, SacredTools
-includeSource = false
-hideCode = true
-includePDB = false
-hideResources = true
-buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+homepage = TODO

@@ -1,8 +1,6 @@
 Completion.
 Another mod for infinite items and crafting recipes... but with modded support!
 
-Want Completion to support a mod? Hop in the Discord and tell me what mods you want to be supported! :D
-
 ===========================================
 [c/1C1C1C:Github]
 https://github.com/Steviegt6/
