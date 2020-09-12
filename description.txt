@@ -1,13 +1,7 @@
-Completion.
-Another mod for infinite items and crafting recipes... but with modded support!
+Yet another infinite items mod.
 
-===========================================
-[c/1C1C1C:Github]
-https://github.com/Steviegt6/
-===========================================
-[c/1C1C1C:Website]
-https://steviegt6.github.io/
-===========================================
+[c/1F1F1F:v1.0.1]
+- Internal code organization, added a mod icon. :wegud:
 
-[c/151515:v1.0.0]
-- Initial mod release.
+[c/1F1F1F:v1.0.0]
+- Endless variants of all vanilla ammo.
