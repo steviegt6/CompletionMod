@@ -9,7 +9,7 @@ namespace CompletionMod.Content.Items
     /// <summary>
     /// Serves as a base for endless items.
     /// </summary>
-    public class EndlessItem : CompletionItem
+    public class EndlessItem : ModItem
     {
         public EndlessItem() { }
 
@@ -26,13 +26,11 @@ namespace CompletionMod.Content.Items
             CraftingStation = craftingStation;
         }
 
-        private readonly int ItemType;
-        private readonly int ItemAmount;
-        private readonly int CraftingStation;
+        private int ItemType;
+        private int ItemAmount;
+        private int CraftingStation;
 
         public override string Texture => "Terraria/Item_" + ItemType;
-
-        public override bool Autoload(ref string name) => false;
 
         public override void SetStaticDefaults()
         {
@@ -54,7 +52,7 @@ namespace CompletionMod.Content.Items
             Tooltip.SetDefault(tooltip);
         }
 
-        public override void SetItemDefaults()
+        public override void SetDefaults()
         {
             item.CloneDefaults(ItemType);
             item.consumable = false;
@@ -67,7 +65,7 @@ namespace CompletionMod.Content.Items
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            spriteBatch.Draw(Main.itemTexture[item.type], position, null, Main.DiscoColor, 0f, origin, scale, SpriteEffects.None, 1f);
+            spriteBatch.Draw(Main.itemTexture[item.type], position, null, new Color(Main.DiscoColor.R, Main.DiscoColor.G, Main.DiscoColor.B, 200), 0f, origin, scale, SpriteEffects.None, 1f);
 
             return false;
         }

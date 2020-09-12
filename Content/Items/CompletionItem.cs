@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 namespace CompletionMod.Content.Items
 {
     /// <summary>
-    /// Serves as a base for all items added by this mod. Just simplifies some stuff. :wegud:
+    /// Serves as a base for most non-endless items added by this mod. Just simplifies some stuff. :wegud:
     /// </summary>
     public abstract class CompletionItem : ModItem
     {
