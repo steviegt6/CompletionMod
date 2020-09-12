@@ -26,9 +26,9 @@ namespace CompletionMod.Content.Items
             CraftingStation = craftingStation;
         }
 
-        private int ItemType;
-        private int ItemAmount;
-        private int CraftingStation;
+        private readonly int ItemType;
+        private readonly int ItemAmount;
+        private readonly int CraftingStation;
 
         public override string Texture => "Terraria/Item_" + ItemType;
 
