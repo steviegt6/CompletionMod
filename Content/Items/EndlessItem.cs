@@ -11,6 +11,8 @@ namespace CompletionMod.Content.Items
     /// </summary>
     public class EndlessItem : CompletionItem
     {
+        public EndlessItem() { }
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -29,6 +31,8 @@ namespace CompletionMod.Content.Items
         private int CraftingStation;
 
         public override string Texture => "Terraria/Item_" + ItemType;
+
+        public override bool Autoload(ref string name) => false;
 
         public override void SetStaticDefaults()
         {
