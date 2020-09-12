@@ -17,10 +17,7 @@ namespace CompletionMod
         // Boosts the player's maximum buffs to 100. The total amount that the player is allowed to be used can be configured. Other mods may raise the total cap further, though thanks to our code, it doesn't matter (see PreUpdateBuffs() in CompletionModPlayer).
         public override uint ExtraPlayerBuffSlots => 78;
 
-        public override void Load()
-        {
-            AddEndlessItems()
-        }
+        public override void Load() => AddEndlessItems();
 
         public override void PostAddRecipes() => CanAutosizeItems = true;
 
