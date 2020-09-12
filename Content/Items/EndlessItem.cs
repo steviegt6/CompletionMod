@@ -26,11 +26,15 @@ namespace CompletionMod.Content.Items
             CraftingStation = craftingStation;
         }
 
-        private int ItemType;
-        private int ItemAmount;
-        private int CraftingStation;
+        public int ItemType;
+        public int ItemAmount;
+        public int CraftingStation;
+
+        public override bool CloneNewInstances => true;
 
         public override string Texture => "Terraria/Item_" + ItemType;
+
+        public override bool Autoload(ref string name) => false;
 
         public override void SetStaticDefaults()
         {
