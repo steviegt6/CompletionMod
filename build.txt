@@ -1,4 +1,4 @@
 displayName = Completion Mod
 author = convicted tomatophile (Stevie)
-version = 1.0.1
+version = 1.0.2
 homepage = https://discord.com/invite/qrZ4Bpz

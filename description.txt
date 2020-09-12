@@ -1,6 +1,9 @@
 Yet another infinite items mod.
 
 [c/1F1F1F:v1.0.1]
+- Fixed rare issue that caused items to not have any stats (maybe).
+
+[c/1F1F1F:v1.0.1]
 - Internal code organization, added a mod icon. :wegud:
 
 [c/1F1F1F:v1.0.0]
